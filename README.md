@@ -3,8 +3,8 @@
 
 
 ## Developed by:
-[ ][Mustafa Bharmal](https://github.com/Mustafabharmal)
-[ ][Khushi Pandya](https://github.com/khushi-79)
+- [ ] [Mustafa Bharmal](https://github.com/Mustafabharmal)
+- [ ] [Khushi Pandya](https://github.com/khushi-79)
 
 <!-- ## Add your files
 
