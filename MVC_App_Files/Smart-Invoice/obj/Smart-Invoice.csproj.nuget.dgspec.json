@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\College docs\\SEM-5\\.NET\\Smart_Invoice\\Smart-Invoice\\MVC_App_Files\\Invoice_web_app\\Smart-Invoice.csproj": {}
+    "D:\\College docs\\SEM-5\\.NET\\Smart_Invoice\\Smart-Invoice\\MVC_App_Files\\Smart-Invoice\\Smart-Invoice.csproj": {}
   },
   "projects": {
-    "D:\\College docs\\SEM-5\\.NET\\Smart_Invoice\\Smart-Invoice\\MVC_App_Files\\Invoice_web_app\\Smart-Invoice.csproj": {
+    "D:\\College docs\\SEM-5\\.NET\\Smart_Invoice\\Smart-Invoice\\MVC_App_Files\\Smart-Invoice\\Smart-Invoice.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\College docs\\SEM-5\\.NET\\Smart_Invoice\\Smart-Invoice\\MVC_App_Files\\Invoice_web_app\\Smart-Invoice.csproj",
+        "projectUniqueName": "D:\\College docs\\SEM-5\\.NET\\Smart_Invoice\\Smart-Invoice\\MVC_App_Files\\Smart-Invoice\\Smart-Invoice.csproj",
         "projectName": "Smart-Invoice",
-        "projectPath": "D:\\College docs\\SEM-5\\.NET\\Smart_Invoice\\Smart-Invoice\\MVC_App_Files\\Invoice_web_app\\Smart-Invoice.csproj",
+        "projectPath": "D:\\College docs\\SEM-5\\.NET\\Smart_Invoice\\Smart-Invoice\\MVC_App_Files\\Smart-Invoice\\Smart-Invoice.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\College docs\\SEM-5\\.NET\\Smart_Invoice\\Smart-Invoice\\MVC_App_Files\\Invoice_web_app\\obj\\",
+        "outputPath": "D:\\College docs\\SEM-5\\.NET\\Smart_Invoice\\Smart-Invoice\\MVC_App_Files\\Smart-Invoice\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
