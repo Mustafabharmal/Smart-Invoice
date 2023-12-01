@@ -9,8 +9,10 @@
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'Invoice_web_app' " />
   <ItemGroup>
     <None Remove="Views\Product\" />
+    <None Remove="Views\Login\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Product\" />
+    <Folder Include="Views\Login\" />
   </ItemGroup>
 </Project>
