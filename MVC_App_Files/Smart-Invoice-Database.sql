@@ -4,7 +4,8 @@ CREATE TABLE Tcategory (
     code NVARCHAR(50),
     description NVARCHAR(MAX),
     image VARBINARY(MAX),
-	created_at DATETIME DEFAULT GETDATE()
+	created_at DATETIME DEFAULT GETDATE(),
+	updated_at DATETIME DEFAULT GETDATE()
 );
 
 select * from Tcategory
@@ -14,6 +15,7 @@ select * from Tcategory
 CREATE TABLE Tsale (
     sale_id INT IDENTITY(1,1) PRIMARY KEY,
     sale_date DATETIME,
+    entryby NVARCHAR(255),
     customer_name NVARCHAR(255),
     supplier_name NVARCHAR(255),
     product_name NVARCHAR(255),
@@ -22,7 +24,9 @@ CREATE TABLE Tsale (
     discount DECIMAL(18, 2),
     tax DECIMAL(18, 2),
     subtotal DECIMAL(18, 2),
-	created_at DATETIME DEFAULT GETDATE()
+	created_at DATETIME DEFAULT GETDATE(),
+    updated_at DATETIME DEFAULT GETDATE()
+   
 );
 
 -- Create the 'add_brand' table
@@ -30,7 +34,8 @@ CREATE TABLE Tbrand (
     brand_name NVARCHAR(255),
     description NVARCHAR(MAX),
     photo VARBINARY(MAX),
-	created_at DATETIME DEFAULT GETDATE()
+	created_at DATETIME DEFAULT GETDATE(),
+    updated_at DATETIME DEFAULT GETDATE()
 );
 
 -- Create the 'add_customer' table
@@ -44,7 +49,8 @@ CREATE TABLE Tcustomer (
     address NVARCHAR(MAX),
     description NVARCHAR(MAX),
     avatar VARBINARY(MAX),
-	created_at DATETIME DEFAULT GETDATE()
+	created_at DATETIME DEFAULT GETDATE(),
+    updated_at DATETIME DEFAULT GETDATE()
 );
 
 -- Create the 'add_product' table
@@ -64,7 +70,8 @@ CREATE TABLE Tproduct (
     price DECIMAL(18, 2),
     status NVARCHAR(50),
     image VARBINARY(MAX),
-	created_at DATETIME DEFAULT GETDATE()
+	created_at DATETIME DEFAULT GETDATE(),
+    updated_at DATETIME DEFAULT GETDATE()
 );
 
 -- Create the 'add_purchase' table
@@ -79,7 +86,8 @@ CREATE TABLE Tpurchase (
     discount_type NVARCHAR(50),
     price DECIMAL(18, 2),
     status NVARCHAR(50),
-	created_at DATETIME DEFAULT GETDATE()
+	created_at DATETIME DEFAULT GETDATE(),
+    updated_at DATETIME DEFAULT GETDATE()
 );
 
 -- Create the 'add_quotation' table
@@ -94,7 +102,8 @@ CREATE TABLE Tquotation (
     discount_type NVARCHAR(50),
     price DECIMAL(18, 2),
     status NVARCHAR(50),
-	created_at DATETIME DEFAULT GETDATE()
+	created_at DATETIME DEFAULT GETDATE(),
+    updated_at DATETIME DEFAULT GETDATE()
 );
 
 -- Create the 'add_store' table
@@ -106,7 +115,8 @@ CREATE TABLE Tstore (
     phone NVARCHAR(20),
     email NVARCHAR(255),
     image VARBINARY(MAX),
-	created_at DATETIME DEFAULT GETDATE()
+	created_at DATETIME DEFAULT GETDATE(),
+    updated_at DATETIME DEFAULT GETDATE()
 );
 
 -- Create the 'add_supplier' table
@@ -120,7 +130,8 @@ CREATE TABLE Tsupplier (
     address NVARCHAR(MAX),
     description NVARCHAR(MAX),
     avatar VARBINARY(MAX),
-	created_at DATETIME DEFAULT GETDATE()
+	created_at DATETIME DEFAULT GETDATE(),
+    updated_at DATETIME DEFAULT GETDATE()
 );
 INSERT INTO Tsupplier (supplier_name, email, phone, country, city, address, description, avatar)
 VALUES
@@ -139,7 +150,8 @@ CREATE TABLE Ttransfer (
     discount_type NVARCHAR(50),
     price DECIMAL(18, 2),
     status NVARCHAR(50),
-	created_at DATETIME DEFAULT GETDATE()
+	created_at DATETIME DEFAULT GETDATE(),
+    updated_at DATETIME DEFAULT GETDATE()
 );
 
 -- Create the 'add_user' table
@@ -153,5 +165,6 @@ CREATE TABLE Tuser (
     email NVARCHAR(255),
     role NVARCHAR(50),
     avatar VARBINARY(MAX),
-	created_at DATETIME DEFAULT GETDATE()
+	created_at DATETIME DEFAULT GETDATE(),
+    updated_at DATETIME DEFAULT GETDATE()
 );
