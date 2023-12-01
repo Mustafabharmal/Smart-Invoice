@@ -1,3 +1,3 @@
 ﻿<Project>
-  <Import Project="../buildMultiTargeting/Smart-Invoice.props" />
+  <Import Project="..\buildMultiTargeting\Smart-Invoice.props" />
 </Project>
