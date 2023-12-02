@@ -8,32 +8,26 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Lenovo\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/Users/mrperfect/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\College docs\\SEM-5\\.NET\\Smart-Invoice\\Smart-Invoice\\MVC_App_Files\\Smart-Invoice\\Smart-Invoice.csproj",
+      "projectUniqueName": "/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/Smart-Invoice.csproj",
       "projectName": "Smart-Invoice",
-      "projectPath": "D:\\College docs\\SEM-5\\.NET\\Smart-Invoice\\Smart-Invoice\\MVC_App_Files\\Smart-Invoice\\Smart-Invoice.csproj",
-      "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "D:\\College docs\\SEM-5\\.NET\\Smart-Invoice\\Smart-Invoice\\MVC_App_Files\\Smart-Invoice\\obj\\",
+      "projectPath": "/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/Smart-Invoice.csproj",
+      "packagesPath": "/Users/mrperfect/.nuget/packages/",
+      "outputPath": "/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/mrperfect/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
+        "/usr/local/share/dotnet/library-packs": {},
+        "/usr/local/share/dotnet/sdk/7.0.311/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -70,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.311/RuntimeIdentifierGraph.json"
       }
     }
   }
