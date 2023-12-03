@@ -1,5 +1,12 @@
 ﻿<Properties StartupConfiguration="{B9E3BC7F-2C3D-4C37-AFBD-9948CF3F59B9}|Invoice_web_app">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Login/Index.cshtml">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Smart-Invoice PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="appsettings.json">
     <Files>
       <File FileName="Properties/launchSettings.json" />
       <File FileName="Views/Home/Index.cshtml" />
@@ -8,53 +15,32 @@
       <File FileName="Views/Shared/_Layout.cshtml.css" />
       <File FileName="Controllers/HomeController.cs" />
       <File FileName="Controllers/ProductController.cs" />
-      <File FileName="Views/Login/Index.cshtml" Line="28" Column="8" />
+      <File FileName="Views/Login/Index.cshtml" />
       <File FileName="Controllers/LoginController.cs" />
       <File FileName="Views/Shared/_ValidationScriptsPartial.cshtml" />
-      <File FileName="appsettings.json" />
-      <File FileName="wwwroot/assets/js/dataTables.bootstrap4.min.js" />
-      <File FileName="wwwroot/assets/js/feather.min.js" />
+      <File FileName="appsettings.json" Line="1" Column="1" />
       <File FileName="wwwroot/assets/js/bootstrap.bundle.min.js" />
-      <File FileName="wwwroot/assets/js/bootstrap-datetimepicker.min.js" />
-      <File FileName="wwwroot/assets/js/jquery-3.6.0.min.js" />
-      <File FileName="wwwroot/assets/js/jquery-ui.min.js" />
-      <File FileName="wwwroot/assets/js/jquery.dataTables.min.js" />
-      <File FileName="wwwroot/assets/js/jquery.slimscroll.min.js" />
-      <File FileName="wwwroot/assets/js/moment.min.js" />
-      <File FileName="wwwroot/assets/js/script.js" />
-      <File FileName="appsettings.Development.json" />
-      <File FileName="Views/Shared/Error.cshtml" />
       <File FileName="Models/ErrorViewModel.cs" />
-      <File FileName="Program.cs" />
+      <File FileName="Program.cs" Line="14" Column="44" />
       <File FileName="Views/_ViewImports.cshtml" />
+      <File FileName="Models/User.cs" Line="24" Column="31" />
+      <File FileName="Views/Product/Index.cshtml" />
+      <File FileName="Views/Shared/Error.cshtml" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Invoice_web_app">
             <Node name="Smart-Invoice">
+              <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Login" expanded="True">
-                  <Node name="Index.cshtml" selected="True" />
-                </Node>
-                <Node name="Shared" expanded="True" />
+                <Node name="Login" expanded="True" />
               </Node>
-              <Node name="wwwroot" expanded="True">
-                <Node name="assets" expanded="True">
-                  <Node name="img" expanded="True" />
-                </Node>
-              </Node>
+              <Node name="appsettings.json" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.Smart-Invoice PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
 </Properties>
