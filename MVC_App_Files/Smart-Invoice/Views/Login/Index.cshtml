@@ -41,18 +41,79 @@
                             <h3>Sign In</h3>
                             <h4>Please login to your account</h4>
                         </div>
-                        <form method="post" asp-page-handler="SignIn">
+
+                        @*@if (ViewBag.Users != null)
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Created At</th>
+                        <th>Updated At</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var user in ViewBag.Users)
+                    {
+                        <tr>
+                            <td>@user.user_id</td>
+                            <td>@user.first_name</td>
+                            <td>@user.last_name</td>
+                            <td>@user.username</td>
+                            <td>@user.email</td>
+                            <td>@user.role</td>
+                            <td>@user.created_at</td>
+                            <td>@user.updated_at</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }*@
+                        <!--<form method="post" asp-page-handler="SignIn">
+    <div class="form-login">
+        <label>Email</label>
+        <div class="form-addons">
+            <input type="text" placeholder="Enter your email address">
+            <img src="~/assets/img/icons/mail.svg" alt="img">
+        </div>
+    </div>
+    <div class="form-login">
+        <label>Password</label>
+        <div class="pass-group">
+            <input type="password" class="pass-input" placeholder="Enter your password">
+            <span class="fas toggle-password fa-eye-slash"></span>
+        </div>
+    </div>
+    <div class="form-login">
+        <div class="alreadyuser">
+            <h4><a asp-area="" asp-controller="Login" asp-action="Forget" class="hover-a">Forgot Password?</a></h4>
+        </div>
+    </div>
+    <div class="form-login">-->
+                        @*<a class="btn btn-login" asp-area="" asp-controller="Home" asp-action="Index">Sign In</a>*@
+
+                        <!--<button type="submit" class="btn btn-login">Sign In</button>
+        </div>
+    </form>-->
+
+                        @using (Html.BeginForm("SignIn", "Login", FormMethod.Post))
+                        {
                             <div class="form-login">
                                 <label>Email</label>
                                 <div class="form-addons">
-                                    <input type="text" placeholder="Enter your email address">
+                                    <input type="text" name="Email" placeholder="Enter your email address">
                                     <img src="~/assets/img/icons/mail.svg" alt="img">
                                 </div>
                             </div>
                             <div class="form-login">
                                 <label>Password</label>
                                 <div class="pass-group">
-                                    <input type="password" class="pass-input" placeholder="Enter your password">
+                                    <input type="password" name="Password" placeholder="Enter your password">
                                     <span class="fas toggle-password fa-eye-slash"></span>
                                 </div>
                             </div>
@@ -62,11 +123,15 @@
                                 </div>
                             </div>
                             <div class="form-login">
-                                @*<a class="btn btn-login" asp-area="" asp-controller="Home" asp-action="Index">Sign In</a>*@
-
                                 <button type="submit" class="btn btn-login">Sign In</button>
                             </div>
-                        </form>
+                        }
+                        @if (!string.IsNullOrEmpty(ViewBag.faillogin))
+                        {
+                        <div class="alert alert-danger" role="alert">
+                            @ViewBag.faillogin
+                        </div>
+                        }
                         <div class="signinform text-center">
                             <h4>Don’t have an account? <a asp-area="" asp-controller="Login" asp-action="SignUp" class="hover-a">Sign Up</a></h4>
                         </div>

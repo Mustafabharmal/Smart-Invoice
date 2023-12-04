@@ -10,10 +10,12 @@
   <ItemGroup>
     <None Remove="Views\Product\" />
     <None Remove="Views\Login\" />
+    <None Remove="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Product\" />
     <Folder Include="Views\Login\" />
+    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0" />

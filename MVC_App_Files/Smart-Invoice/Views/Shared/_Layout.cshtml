@@ -266,7 +266,7 @@
                 <div id="sidebar-menu" class="sidebar-menu">
                     <ul>
                         <li class=" @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" ? "active" : "")">
-                            <a asp-area="" asp-controller="Home" asp-action="index" >
+                            <a asp-area="" asp-controller="Home" asp-action="index">
                                 <img src="~/assets/img/icons/dashboard.svg" alt="img"><span>
                                     Dashboard
                                 </span>
@@ -280,7 +280,8 @@
                             </a>
                             <ul>
                                 <li>
-                                    <a class=" @(ViewContext.RouteData.Values["Controller"].ToString() == "Product" ? "active" : "")" asp-area="" asp-controller="Product" asp-action="index">Product</a></li>
+                                    <a class=" @(ViewContext.RouteData.Values["Controller"].ToString() == "Product" ? "active" : "")" asp-area="" asp-controller="Product" asp-action="index">Product</a>
+                                </li>
                                 <li><a href="addproduct.html">Add Product</a></li>
                                 <li><a href="categorylist.html">Category List</a></li>
                                 <li><a href="addcategory.html">Add Category</a></li>
@@ -506,16 +507,16 @@
                                 <li><a href="customerreport.html">Customer Report</a></li>
                             </ul>
                         </li>
-                        <li class="submenu">
-                            <a href="javascript:void(0);">
+                        <li class=" @(ViewContext.RouteData.Values["Controller"].ToString() == "User" ? "active" : "")">
+                            <a asp-area="" asp-controller="User" asp-action="index">
                                 <img src="~/assets/img/icons/users1.svg" alt="img"><span>
                                     Users
-                                </span> <span class="menu-arrow"></span>
+                                </span>@* <span class="menu-arrow"></span>*@
                             </a>
-                            <ul>
-                                <li><a href="newuser.html">New User </a></li>
-                                <li><a href="userlists.html">Users List</a></li>
-                            </ul>
+                            @*<ul>
+                                    <li><a href="newuser.html">New User </a></li>
+                                    <li><a href="userlists.html">Users List</a></li>
+                                </ul>*@
                         </li>
                         <li class="submenu">
                             <a href="javascript:void(0);">
@@ -558,6 +559,19 @@
     <script src="~/assets/plugins/apexchart/chart-data.js"></script>
 
     <script src="~/assets/js/script.js"></script>
+
+
+    @*<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>*@
+  
+
+    <script src="~/assets/plugins/select2/js/select2.min.js"></script>
+
+    <script src="~/assets/js/moment.min.js"></script>
+    <script src="~/assets/js/bootstrap-datetimepicker.min.js"></script>
+
+    <script src="~/assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="~/assets/plugins/sweetalert/sweetalerts.min.js"></script>
+
 </body>
 
 <!--<body>

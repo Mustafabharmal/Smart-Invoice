@@ -6,37 +6,39 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.Smart-Invoice PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="appsettings.json">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/LoginController.cs">
     <Files>
       <File FileName="Properties/launchSettings.json" />
       <File FileName="Views/Home/Index.cshtml" />
       <File FileName="Views/Home/Privacy.cshtml" />
       <File FileName="Views/Shared/_Layout.cshtml" />
       <File FileName="Views/Shared/_Layout.cshtml.css" />
-      <File FileName="Controllers/HomeController.cs" />
-      <File FileName="Controllers/ProductController.cs" />
-      <File FileName="Views/Login/Index.cshtml" />
-      <File FileName="Controllers/LoginController.cs" />
+      <File FileName="Controllers/HomeController.cs" Line="5" Column="26" />
+      <File FileName="Controllers/ProductController.cs" Line="9" Column="26" />
+      <File FileName="Views/Login/Index.cshtml" Line="7" Column="53" />
+      <File FileName="Controllers/LoginController.cs" Line="35" Column="41" />
       <File FileName="Views/Shared/_ValidationScriptsPartial.cshtml" />
       <File FileName="appsettings.json" Line="1" Column="1" />
       <File FileName="wwwroot/assets/js/bootstrap.bundle.min.js" />
-      <File FileName="Models/ErrorViewModel.cs" />
+      <File FileName="Models/ErrorViewModel.cs" Line="1" Column="1" />
       <File FileName="Program.cs" Line="14" Column="44" />
       <File FileName="Views/_ViewImports.cshtml" />
-      <File FileName="Models/User.cs" Line="24" Column="31" />
+      <File FileName="Models/User.cs" Line="18" Column="23" />
       <File FileName="Views/Product/Index.cshtml" />
       <File FileName="Views/Shared/Error.cshtml" />
+      <File FileName="Views/Login/Forget.cshtml" Line="53" Column="107" />
+      <File FileName="Views/Login/SignUp.cshtml" Line="65" Column="57" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Invoice_web_app">
-            <Node name="Smart-Invoice">
+            <Node name="Smart-Invoice" expanded="True">
+              <Node name="Controllers" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Login" expanded="True" />
               </Node>
-              <Node name="appsettings.json" selected="True" />
             </Node>
           </Node>
         </State>
