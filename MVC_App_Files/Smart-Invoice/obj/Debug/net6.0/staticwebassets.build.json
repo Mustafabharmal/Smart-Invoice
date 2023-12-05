@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Ocac/8TMD+0lF0N2ROpO0AXv1SUhhweMBohBYTQlvSM=",
+  "Hash": "Ar/xwbCxNEwohtJPbt+THps667XczQsOGhPXhaPlqxM=",
   "Source": "Smart-Invoice",
   "BasePath": "_content/Smart-Invoice",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/.DS_Store"
+    },
+    {
+      "Identity": "/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/wwwroot/assets/.DS_Store",
+      "SourceId": "Smart-Invoice",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/wwwroot/",
+      "BasePath": "_content/Smart-Invoice",
+      "RelativePath": "assets/.DS_Store",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/.DS_Store"
     },
     {
       "Identity": "/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/wwwroot/assets/css/animate.css",
@@ -151,6 +168,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/assets/css/style.css"
+    },
+    {
+      "Identity": "/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/wwwroot/assets/img/.DS_Store",
+      "SourceId": "Smart-Invoice",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/wwwroot/",
+      "BasePath": "_content/Smart-Invoice",
+      "RelativePath": "assets/img/.DS_Store",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/img/.DS_Store"
     },
     {
       "Identity": "/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/wwwroot/assets/img/barcode1.png",
@@ -525,6 +559,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/assets/img/flags/us1.png"
+    },
+    {
+      "Identity": "/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/wwwroot/assets/img/icons/.DS_Store",
+      "SourceId": "Smart-Invoice",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/wwwroot/",
+      "BasePath": "_content/Smart-Invoice",
+      "RelativePath": "assets/img/icons/.DS_Store",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/img/icons/.DS_Store"
     },
     {
       "Identity": "/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/wwwroot/assets/img/icons/calendars.svg",
@@ -1494,6 +1545,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/assets/img/icons/settings.svg"
+    },
+    {
+      "Identity": "/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/wwwroot/assets/img/icons/ShopSVG.svg",
+      "SourceId": "Smart-Invoice",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/wwwroot/",
+      "BasePath": "_content/Smart-Invoice",
+      "RelativePath": "assets/img/icons/ShopSVG.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/img/icons/ShopSVG.svg"
     },
     {
       "Identity": "/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/wwwroot/assets/img/icons/time.svg",

@@ -30,5 +30,6 @@ namespace Invoice_web_app.Models
         public UserDBContext(DbContextOptions<UserDBContext> options) : base(options) { }
 
         public DbSet<User> Tuser { get; set; }
+        public DbSet<Store> Tstore { get; set; }
     }
 }

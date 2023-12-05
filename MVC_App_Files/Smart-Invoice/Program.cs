@@ -37,10 +37,35 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Login}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}",
+    defaults: new { controller = "Home", action = "Index" }
+);
+
+app.MapControllerRoute(
+    name: "login",
+    pattern: "{controller=Login}/{action=Index}/{id?}",
+    defaults: new { controller = "Login", action = "Index" }
+);
 //app.MapControllerRoute(
 //    name: "Employees",
 //    pattern: "{controller=Employees}/{action=Index}/{id?}");
 
+
+//app.Use(async (context, next) =>
+//{
+//    // Check if user is authenticated based on the presence of 'user_id' in session
+//    var userId = context.Session.GetInt32("UserId");
+//    var path = context.Request.Path;
+
+//    if (userId==null && !path.StartsWithSegments("/Login", StringComparison.OrdinalIgnoreCase))
+//    {
+//        // User is not authenticated and not already on the login page, redirect to the login page
+//        context.Response.Redirect("/Login/Index");
+//        return;
+//    }
+
+//    // User is authenticated or already on the login page, continue to the next middleware
+//    await next();
+//});
 app.Run();
 

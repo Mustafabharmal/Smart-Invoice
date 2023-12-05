@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets/.DS_Store"
     },
     {
+      "Id": "/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/wwwroot/assets/.DS_Store",
+      "PackagePath": "staticwebassets/assets/.DS_Store"
+    },
+    {
       "Id": "/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/wwwroot/assets/css/animate.css",
       "PackagePath": "staticwebassets/assets/css/animate.css"
     },
@@ -27,6 +31,10 @@
     {
       "Id": "/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/wwwroot/assets/css/style.css",
       "PackagePath": "staticwebassets/assets/css/style.css"
+    },
+    {
+      "Id": "/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/wwwroot/assets/img/.DS_Store",
+      "PackagePath": "staticwebassets/assets/img/.DS_Store"
     },
     {
       "Id": "/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/wwwroot/assets/img/MyLogos/1.jpg",
@@ -147,6 +155,14 @@
     {
       "Id": "/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/wwwroot/assets/img/flags/us1.png",
       "PackagePath": "staticwebassets/assets/img/flags/us1.png"
+    },
+    {
+      "Id": "/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/wwwroot/assets/img/icons/.DS_Store",
+      "PackagePath": "staticwebassets/assets/img/icons/.DS_Store"
+    },
+    {
+      "Id": "/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/wwwroot/assets/img/icons/ShopSVG.svg",
+      "PackagePath": "staticwebassets/assets/img/icons/ShopSVG.svg"
     },
     {
       "Id": "/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/wwwroot/assets/img/icons/calendars.svg",
