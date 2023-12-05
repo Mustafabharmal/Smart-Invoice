@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var role = Context.Session.GetInt32("Role");
+    string avatarBase64 = Context.Session.GetString("Avtar");
+}
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -71,29 +75,6 @@
                         </form>
                     </div>
                 </li>
-
-
-                <!-- <li class="nav-item dropdown has-arrow flag-nav">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="javascript:void(0);"
-                        role="button">
-                        <img src="~/assets/img/flags/us1.png" alt="" height="20">
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <a href="javascript:void(0);" class="dropdown-item">
-                            <img src="~/assets/img/flags/us.png" alt="" height="16"> English
-                        </a>
-                        <a href="javascript:void(0);" class="dropdown-item">
-                            <img src="~/assets/img/flags/fr.png" alt="" height="16"> French
-                        </a>
-                        <a href="javascript:void(0);" class="dropdown-item">
-                            <img src="~/assets/img/flags/es.png" alt="" height="16"> Spanish
-                        </a>
-                        <a href="javascript:void(0);" class="dropdown-item">
-                            <img src="~/assets/img/flags/de.png" alt="" height="16"> German
-                        </a>
-                    </div>
-                </li> -->
-
 
                 <li class="nav-item dropdown">
                     <a href="javascript:void(0);" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
@@ -213,20 +194,35 @@
                 <li class="nav-item dropdown has-arrow main-drop">
                     <a href="javascript:void(0);" class="dropdown-toggle nav-link userset" data-bs-toggle="dropdown">
                         <span class="user-img">
-                            <img src="~/assets/img/profiles/avator1.jpg" alt="">
-                            <span class="status online"></span>
+                            
+                                <img  class="product-img" src="data:image/jpeg;base64, @avatarBase64" alt="">
+                                <span class="status online"></span>
                         </span>
                     </a>
                     <div class="dropdown-menu menu-drop-user">
                         <div class="profilename">
                             <div class="profileset">
                                 <span class="user-img">
-                                    <img src="~/assets/img/profiles/avator1.jpg" alt="">
+                                    <img src="data:image/jpeg;base64, @avatarBase64" alt="">
+
                                     <span class="status online"></span>
                                 </span>
                                 <div class="profilesets">
-                                    <h6>John Doe</h6>
-                                    <h5>Admin</h5>
+                                    <h6>@Context.Session.GetString("FirstName") @Context.Session.GetString("LastName")</h6>
+                                    <h5>
+                                        @if (role == 0)
+                                        {
+                                            <text>Admin</text>
+                                        }
+                                        else if (role == 1)
+                                        {
+                                            <text>User</text>
+                                        }
+                                        else
+                                        {
+                                            <text>Unknown Role</text>
+                                        }
+                                    </h5>
                                 </div>
                             </div>
                             <hr class="m-0">
@@ -562,7 +558,7 @@
 
 
     @*<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>*@
-  
+
 
     <script src="~/assets/plugins/select2/js/select2.min.js"></script>
 
@@ -604,13 +600,12 @@
             @RenderBody()
         </main>
     </div>-->
-
-    @*<footer class="border-top footer text-muted">
-            <div class="container">
-                &copy; 2023 - Smart-Invoice - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-            </div>
-        </footer>*@
-    <!--<script src="~/lib/jquery/dist/jquery.min.js"></script>
+@*<footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - Smart-Invoice - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>*@
+<!--<script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)

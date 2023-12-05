@@ -53,7 +53,7 @@
                     </div>*@
             </div>
 
-            <div class="card" id="filter_inputs">
+            @*<div class="card" id="filter_inputs">
                 <div class="card-body pb-0">
                     <div class="row">
                         <div class="col-lg-2 col-sm-6 col-12">
@@ -94,39 +94,40 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>*@
 
-            <div class="table-responsive">
+            <td class="table-responsive">
                 <table class="table datanew">
                     <thead>
                         <tr>
                             @*<th>
-                                    <label class="checkboxs">
-                                        <input type="checkbox">
-                                        <span class="checkmarks"></span>
-                                    </label>
-                                </th>*@
-                            @*<th>updated at</th>*@
+            <label class="checkboxs">
+                <input type="checkbox">
+                <span class="checkmarks"></span>
+            </label>
+        </th>*@
+                            <th hidden>updated at</th>
                             <th>Name</th>
+                            <th>Avtar</th>
                             <th>User name</th>
                             <th>Phone</th>
                             <th>Email</th>
                             <th>Role</th>
                             @*<th>Created On</th>*@
-                            <th>Status</th>
+                            @*<th>Status</th>*@
                             <th>Action</th>
                             @*[Key]
-                                public int user_id { get; set; }
-                                public string first_name { get; set; }
-                                public string last_name { get; set; }
-                                public string username { get; set; }
-                                public string pwd { get; set; }
-                                public string phone { get; set; }
-                                public string email { get; set; }
-                                public string role { get; set; }
-                                public byte[]? avatar { get; set; }
-                                public DateTime created_at { get; set; }
-                                public DateTime updated_at { get; set; }*@
+        public int user_id { get; set; }
+        public string first_name { get; set; }
+        public string last_name { get; set; }
+        public string username { get; set; }
+        public string pwd { get; set; }
+        public string phone { get; set; }
+        public string email { get; set; }
+        public string role { get; set; }
+        public byte[]? avatar { get; set; }
+        public DateTime created_at { get; set; }
+        public DateTime updated_at { get; set; }*@
                         </tr>
                     </thead>
                     <tbody>
@@ -134,23 +135,49 @@
                         {
                             <tr>
                                 @*<td>
-                                        <label class="checkboxs">
-                                            <input type="checkbox">
-                                            <span class="checkmarks"></span>
-                                        </label>
-                                    </td>*@
-                                @*<td>@user.updated_at.ToString("MM/dd/yyyy")</td>*@
+            <label class="checkboxs">
+                <input type="checkbox">
+                <span class="checkmarks"></span>
+            </label>
+        </td>*@
+                                <td hidden>@user.updated_at.ToString("MM/dd/yyyy")</td>
 
                                 <td>@user.first_name @user.last_name</td>
+                                <td>
+
+                                    @if (user.avatar != null && user.avatar.Length > 0)
+                                    {
+                                        var base64String = Convert.ToBase64String(user.avatar);
+                                       
+                                        <a href="javascript:void(0);" class="product-img">
+                                            <img src="data:image/png;base64,@base64String" alt="Avatar" class="img-thumbnail" />
+                                        </a>
+                                        @*<a href="javascript:void(0);">@user.first_name @user.last_name</a>*@
+                                    }
+                                </td>
+
                                 <td>@user.username</td>
                                 <td>@user.phone</td>
                                 <td>
                                     <a href="mailto:@user.email" class="__cf_email__"
                                        data-cfemail="fb8f9394969a88bb9e839a968b979ed5989496">@user.email</a>
                                 </td>
-                                <td>@user.role</td>
+                                <td>
+                                    @if (user.role == 0)
+                                    {
+                                        <span style="background-color: mediumseagreen; color: white; padding: 5px 10px; border-radius: 5px;" class="badges">Admin</span>
+                                    }
+                                    else if (user.role == 1)
+                                    {
+                                        <span style="background-color: orange; color: white; padding: 5px 10px; border-radius: 5px;" class="badges">User</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badges">Unknown Role</span>
+                                    }
+                                </td>
                                 @*<td>@user.created_at.ToString("MM/dd/yyyy")</td>*@
-                                <td><span class="bg-lightgreen badges">Active</span></td>
+                                @*<td><span class="bg-lightgreen badges">Active</span></td>*@
                                 <td>
                                     <a class="me-3" asp-action="Edit" asp-route-id="@user.user_id">
                                         <img src="assets/img/icons/edit.svg" alt="Edit">
@@ -158,7 +185,7 @@
                                     <a class="me-3 confirm-text" asp-action="Delete" asp-route-id="@user.user_id">
                                         <img src="assets/img/icons/delete.svg" alt="Delete">
                                     </a>
-                                    
+
                                 </td>
                             </tr>
                         }

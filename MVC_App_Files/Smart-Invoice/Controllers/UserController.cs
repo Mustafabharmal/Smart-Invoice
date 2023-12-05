@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Invoice_web_app.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,11 +21,12 @@ namespace SmartInvoice.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            //var users = await _context.Tuser.ToListAsync();
-            //ViewBag.faillogin = null;
-            //return View(users);
-            //var users = _context.Tuser.ToList();
-            var users = await _context.Tuser.OrderBy(u => u.updated_at).ToListAsync();
+            var users = await _context.Tuser
+            .Where(u => u.status == 1) // Add this line to filter by status
+            .OrderBy(u => u.updated_at)
+            .ToListAsync();
+           
+
             ViewBag.Users = users;
             return View();
         }
@@ -36,7 +38,7 @@ namespace SmartInvoice.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create()
+        public IActionResult Create(IFormFile avatar)
         {
             // Retrieve form values using Request
             string firstName = Request.Form["first_name"];
@@ -45,26 +47,40 @@ namespace SmartInvoice.Controllers
             string password = Request.Form["pwd"];
             string phone = Request.Form["phone"];
             string email = Request.Form["email"];
-            string role = Request.Form["role"];
+            int role = int.Parse(Request.Form["role"]);
 
-            // Validate or process the form data as needed
+            var passwordHasher = new PasswordHasher<object>();
+            var hashedPassword = passwordHasher.HashPassword(null, password);
+
             if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(email))
             {
                 ViewBag.ErrorMessage = "First Name and Email are required.";
                 return View();
             }
 
+            // Check if an avatar file was provided
+            byte[] avatarData = null;
+            if (avatar != null && avatar.Length > 0)
+            {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    avatar.CopyTo(ms);
+                    avatarData = ms.ToArray();
+                }
+            }
             // Create a user and add it to the list
             var newUser = new User
             {
                 first_name = firstName,
                 last_name = lastName,
                 username = userName,
-                pwd = password,
+                pwd = hashedPassword,
                 phone = phone,
                 email = email,
                 role = role,
-                avatar=null,
+                status = 1,
+                avatar = avatarData,
+              
                 created_at = DateTime.Now,
                 updated_at = DateTime.Now
             };
@@ -101,7 +117,7 @@ namespace SmartInvoice.Controllers
             string username = Request.Form["username"];
             string phone = Request.Form["phone"];
             string email = Request.Form["email"];
-            string role = Request.Form["role"];
+            int role = int.Parse(Request.Form["role"]);
 
             // Find the user in the database
             var user = _context.Tuser.FirstOrDefault(u => u.user_id == userId);
@@ -119,7 +135,7 @@ namespace SmartInvoice.Controllers
             user.phone = phone;
             user.email = email;
             user.role = role;
-
+            user.status = 1;
             // Save changes to the database
             _context.SaveChanges();
 
@@ -134,10 +150,10 @@ namespace SmartInvoice.Controllers
             try
             {
                 var user = _context.Tuser.FirstOrDefault(u => u.user_id == id);
-
+                user.status = 0;
                 if (user != null)
                 {
-                    _context.Tuser.Remove(user);
+                    //_context.Tuser.Remove(user);
                     _context.SaveChanges();
                 }
 
