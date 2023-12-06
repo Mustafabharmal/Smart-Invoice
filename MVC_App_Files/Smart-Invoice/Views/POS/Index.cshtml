@@ -1,0 +1,1249 @@
+﻿@{
+    Layout = null;
+    var role = Context.Session.GetInt32("Role");
+    string avatarBase64 = Context.Session.GetString("Avtar");
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta name="description" content="POS - Bootstrap Admin Template">
+    <meta name="keywords"
+          content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects">
+    <meta name="author" content="Dreamguys - Bootstrap Admin Template">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Smart Invoice</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="~/assets/img/favicon.png">
+
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="~/assets/css/animate.css">
+
+    <link rel="stylesheet" href="~/assets/plugins/owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/assets/plugins/owlcarousel/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="~/assets/plugins/select2/css/select2.min.css">
+
+    <link rel="stylesheet" href="~/assets/css/bootstrap-datetimepicker.min.css">
+
+    <link rel="stylesheet" href="~/assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="~/assets/plugins/fontawesome/css/all.min.css">
+
+    <link rel="stylesheet" href="~/assets/css/style.css">
+</head>
+
+<body>
+    <div id="global-loader">
+        <div class="whirly-loader"> </div>
+    </div>
+
+    <div class="main-wrapper">
+
+        <div class="header">
+
+            <div class="header-left active">
+                <a asp-area="" asp-controller="Home" asp-action="index" class="logo">
+                    <img src="~/assets/img/logo.png" alt="">
+                </a>
+                <a asp-area="" asp-controller="Home" asp-action="index" class="logo-small">
+                    <img src="~/assets/img/logo-small.png" alt="">
+                </a>
+                @*<a id="toggle_btn" href="javascript:void(0);">
+                    </a>*@
+            </div>
+
+            <a id="mobile_btn" class="mobile_btn" href="#sidebar">
+                <span class="bar-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </a>
+
+            <ul class="nav user-menu">
+
+                <li class="nav-item">
+                    <div class="top-nav-search">
+                        <a href="javascript:void(0);" class="responsive-search">
+                            <i class="fa fa-search"></i>
+                        </a>
+                        <form action="#">
+                            <div class="searchinputs">
+                                <input type="text" placeholder="Search Here ...">
+                                <div class="search-addon">
+                                    <span><img src="~/assets/img/icons/closes.svg" alt="img"></span>
+                                </div>
+                            </div>
+                            <a class="btn" id="searchdiv"><img src="~/assets/img/icons/search.svg" alt="img"></a>
+                        </form>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a href="javascript:void(0);" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+                        <img src="~/assets/img/icons/notification-bing.svg" alt="img"> <span class="badge rounded-pill">4</span>
+                    </a>
+                    <div class="dropdown-menu notifications">
+                        <div class="topnav-dropdown-header">
+                            <span class="notification-title">Notifications</span>
+                            <a href="javascript:void(0)" class="clear-noti"> Clear All </a>
+                        </div>
+                        <div class="noti-content">
+                            <ul class="notification-list">
+                                <li class="notification-message">
+                                    <a href="activities.html">
+                                        <div class="media d-flex">
+                                            <span class="avatar flex-shrink-0">
+                                                <img alt="" src="assets/img/profiles/avatar-02.jpg">
+                                            </span>
+                                            <div class="media-body flex-grow-1">
+                                                <p class="noti-details">
+                                                    <span class="noti-title">John Doe</span> added
+                                                    new task <span class="noti-title">Patient appointment booking</span>
+                                                </p>
+                                                <p class="noti-time">
+                                                    <span class="notification-time">4 mins ago</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="activities.html">
+                                        <div class="media d-flex">
+                                            <span class="avatar flex-shrink-0">
+                                                <img alt="" src="~/assets/img/profiles/avatar-03.jpg">
+                                            </span>
+                                            <div class="media-body flex-grow-1">
+                                                <p class="noti-details">
+                                                    <span class="noti-title">Tarah Shropshire</span>
+                                                    changed the task name <span class="noti-title">
+                                                        Appointment booking
+                                                        with payment gateway
+                                                    </span>
+                                                </p>
+                                                <p class="noti-time">
+                                                    <span class="notification-time">6 mins ago</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="activities.html">
+                                        <div class="media d-flex">
+                                            <span class="avatar flex-shrink-0">
+                                                <img alt="" src="~/assets/img/profiles/avatar-06.jpg">
+                                            </span>
+                                            <div class="media-body flex-grow-1">
+                                                <p class="noti-details">
+                                                    <span class="noti-title">Misty Tison</span>
+                                                    added <span class="noti-title">Domenic Houston</span> and <span class="noti-title">Claire Mapes</span> to project <span class="noti-title">Doctor available module</span>
+                                                </p>
+                                                <p class="noti-time">
+                                                    <span class="notification-time">8 mins ago</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="activities.html">
+                                        <div class="media d-flex">
+                                            <span class="avatar flex-shrink-0">
+                                                <img alt="" src="~/assets/img/profiles/avatar-17.jpg">
+                                            </span>
+                                            <div class="media-body flex-grow-1">
+                                                <p class="noti-details">
+                                                    <span class="noti-title">Rolland Webber</span>
+                                                    completed task <span class="noti-title">
+                                                        Patient and Doctor video
+                                                        conferencing
+                                                    </span>
+                                                </p>
+                                                <p class="noti-time">
+                                                    <span class="notification-time">12 mins ago</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="activities.html">
+                                        <div class="media d-flex">
+                                            <span class="avatar flex-shrink-0">
+                                                <img alt="" src="~/assets/img/profiles/avatar-13.jpg">
+                                            </span>
+                                            <div class="media-body flex-grow-1">
+                                                <p class="noti-details">
+                                                    <span class="noti-title">Bernardo Galaviz</span>
+                                                    added new task <span class="noti-title">Private chat module</span>
+                                                </p>
+                                                <p class="noti-time">
+                                                    <span class="notification-time">2 days ago</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="topnav-dropdown-footer">
+                            <a href="activities.html">View all Notifications</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown has-arrow main-drop">
+                    <a href="javascript:void(0);" class="dropdown-toggle nav-link userset" data-bs-toggle="dropdown">
+                        <span class="user-img">
+
+                            <img class="product-img" src="data:image/jpeg;base64, @avatarBase64" alt="">
+                            <span class="status online"></span>
+                        </span>
+                    </a>
+                    <div class="dropdown-menu menu-drop-user">
+                        <div class="profilename">
+                            <div class="profileset">
+                                <span class="user-img">
+                                    <img src="data:image/jpeg;base64, @avatarBase64" alt="">
+
+                                    <span class="status online"></span>
+                                </span>
+                                <div class="profilesets">
+                                    <h6>@Context.Session.GetString("FirstName") @Context.Session.GetString("LastName")</h6>
+                                    <h5>
+                                        @if (role == 0)
+                                        {
+                                            <text>Admin</text>
+                                        }
+                                        else if (role == 1)
+                                        {
+                                            <text>User</text>
+                                        }
+                                        else
+                                        {
+                                            <text>Unknown Role</text>
+                                        }
+                                    </h5>
+                                </div>
+                            </div>
+                            <hr class="m-0">
+                            <a class="dropdown-item" href="profile.html">
+                                <i class="me-2" data-feather="user"></i> My
+                                Profile
+                            </a>
+                            <a class="dropdown-item" href="generalsettings.html">
+                                <i class="me-2"
+                                   data-feather="settings"></i>Settings
+                            </a>
+                            <hr class="m-0">
+                            <a class="dropdown-item logout pb-0" href="signin.html">
+                                <img src="~/assets/img/icons/log-out.svg" class="me-2" alt="img">Logout
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+
+            <div class="dropdown mobile-user-menu">
+                <a href="javascript:void(0);" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                   aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="profile.html">My Profile</a>
+                    <a class="dropdown-item" href="generalsettings.html">Settings</a>
+                    <a class="dropdown-item" href="signin.html">Logout</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="page-wrapper ms-0">
+            <div class="content">
+                <div class="row">
+                    <div class="col-lg-8 col-sm-12 tabs_wrapper">
+                        <div class="page-header ">
+                            <div class="page-title">
+                                <h4>Categories</h4>
+                                <h6>Manage your purchases</h6>
+                            </div>
+                        </div>
+                        <ul class="tabs owl-carousel owl-theme owl-product border-0">
+                            <li class="active" id="All">
+                                <div class="product-details ">
+                                    <img src="assets/img/product/product62.png" alt="img">
+                                    <h6>All</h6>
+                                </div>
+                            </li>
+                            @foreach (var category in ViewBag.Category)
+                            {
+                                <li id="@category.category_id">
+                                    <div class="product-details">
+                                        @*<img src="@category.ImageUrl" alt="img">*@
+                                        @if (category.image != null && category.image.Length > 0)
+                                        {
+                                            var base64String = Convert.ToBase64String(category.image);
+
+                                            <a href="javascript:void(0);" class="product-img">
+                                                <img src="data:image/png;base64,@base64String" alt="Avatar" class="img-thumbnail" style="max-width: 50px; max-height: 50px;" />
+                                            </a>
+                                            @*<a href="javascript:void(0);">@user.first_name @user.last_name</a>*@
+                                        }
+                                        <h6>@category.product_name</h6>
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                        <div class="tabs_container">
+                            <div class="tab_content active" data-tab="All">
+                                <div class="row ">
+                                    @foreach (var product in ViewBag.Product)
+                                    {
+                                        <div class="col-lg-3 col-sm-6 d-flex">
+                                            <div class="productset flex-fill">
+                                                <div class="productsetimg">
+                                                    @if (product.image != null && product.image.Length > 0)
+                                                    {
+                                                        var base64String = Convert.ToBase64String(product.image);
+
+                                                        <a href="@Url.Action("ProductDetails", "POS", new { productId = product.product_id })" class="product-img">
+                                                            <img src="data:image/png;base64,@base64String" alt="Avatar" class="img-thumbnail" />
+                                                        </a>
+                                                        @*<a href="javascript:void(0);">@user.first_name @user.last_name</a>*@
+                                                    }
+                                                    <h6>Qty: @product.quantity</h6>
+                                                    <div class="check-product">
+
+                                                        <i class="fa fa-check"></i>
+
+                                                    </div>
+
+                                                </div>
+                                                <div class="productsetcontent">
+                                                    <h5>@product.category_id</h5>
+                                                    <h4>@product.product_name</h4>
+                                                    <h6>@product.price</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+
+                            @foreach (var category in ViewBag.Category)
+                            {
+                                <div class="tab_content " data-tab="@category.category_id">
+                                    <div class="row">
+                                        @foreach (var producti in ViewBag.Product)
+                                        {
+                                            if (category.category_id == producti.category_id)
+                                            {
+                                                <div class="col-lg-3 col-sm-6 d-flex">
+                                                    <div class="productset flex-fill">
+                                                        <div class="productsetimg">
+                                                            @if (producti.image != null && producti.image.Length > 0)
+                                                            {
+                                                                var base64String = Convert.ToBase64String(producti.image);
+
+                                                                <a href="@Url.Action("ProductDetails", "POS", new { productId = producti.product_id })" class="product-img">
+                                                                    <img src="data:image/png;base64,@base64String" alt="Avatar" class="img-thumbnail" />
+                                                                </a>
+                                                                @*<a href="javascript:void(0);">@user.first_name @user.last_name</a>*@
+                                                            }
+                                                            <h6>Qty: @producti.quantity</h6>
+                                                            <div class="check-product">
+
+                                                                <i class="fa fa-check"></i>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="productsetcontent">
+                                                            <h5>@category.product_name</h5>
+                                                            <h4>@producti.product_name</h4>
+                                                            <h6>@producti.price</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>}
+                                        }
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                       
+                    </div>
+
+                    <div class="col-lg-4 col-sm-12 ">
+                        <div class="order-list">
+                            <div class="orderid">
+                                <h4>Order List</h4>
+                                <h5>Transaction id : #65565</h5>
+                            </div>
+
+                            <div class="actionproducts">
+                                <ul>
+                                    <li>
+                                        <a href="javascript:void(0);" class="deletebg confirm-text">
+                                            <img src="~/assets/img/icons/delete-2.svg" alt="img">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="false"
+                                           class="dropset">
+                                            <img src="~/assets/img/icons/ellipise1.svg" alt="img">
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton"
+                                            data-popper-placement="bottom-end">
+                                            <li>
+                                                <a href="#" class="dropdown-item">Action</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="dropdown-item">Another Action</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="dropdown-item">Something Elses</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        @*@if (ViewBag.prodid != null)
+                        {
+                            // Render the prodid list
+                            @foreach (var productId in ViewBag.prodid)
+                            {
+                                <p>@productId</p>
+                            }
+                        }
+                        else
+                        {
+                            <p>no data found</p>
+                        }*@
+                        <div class="card card-order">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <a href="javascript:void(0);" class="btn btn-adds" data-bs-toggle="modal"
+                                           data-bs-target="#recents"><i class="fa fa-plus me-2"></i>Search Customer</a>
+                                    </div>
+                                  
+                                    <div class="col-lg-12">
+                                        <div class="select-split ">
+                                            <div class="select-group w-100">
+                                                @*@ViewBag.selectedcustomer*@
+                                                <select class="select">
+                                                    <option value="0" selected>Walk-in Customer</option>
+                                                    @if (ViewBag.selectedcustomer != null)
+                                                    {
+                                                        <option value="@ViewBag.selectedcustomer.customer_id" selected>@ViewBag.selectedcustomer.name</option>
+                                                    }
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="select-split">
+                                            <div class="select-group w-100">
+                                                <select class="select">
+                                                    <option>Product </option>
+                                                    <option>Barcode</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="text-end">
+                                            <a class="btn btn-scanner-set">
+                                                <img src="~/assets/img/icons/scanner1.svg"
+                                                     alt="img" class="me-2">Scan bardcode
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="split-card">
+                            </div>
+                            <div class="card-body pt-0">
+                                <div class="totalitem">
+                                    <h4>Total items : @ViewBag.TotalIteCount</h4>
+                                    <a  href="@Url.Action("Clearall", "POS")">Clear all</a>
+                                </div>
+                                <div class="product-table">
+                                    @foreach (var productss in ViewBag.SelectedProducts)
+                                    {
+                                        <ul class="product-lists">
+                                            <li>
+                                                <div class="productimg">
+                                                    <div class="productimgs">
+                                                        <img src="data:image/png;base64,@Convert.ToBase64String(productss.Details.image)" alt="img">
+                                                    </div>
+                                                    <div class="productcontet">
+                                                        <h4>
+                                                            <a href="javascript:void(0);" class="product-img" data-productid="@productss.Details.product_id">
+                                                                @productss.Details.product_name
+                                                                <img src="~/assets/img/icons/edit-5.svg" alt="img">
+                                                            </a>
+                                                        </h4>
+                                                        <div class="productlinkset">
+                                                            <h5>PT001</h5>
+                                                        </div>
+                                                        <div class="increment-decrement">
+                                                            <div class="input-groups">
+                                                                <a href="@Url.Action("ProductDecre", "POS", new { productId = productss.Details.product_id })">
+                                                                    <input type="button" value="-" class="button-minus dec button">
+                                                                </a>
+                                                                <input type="text" name="child" value="@productss.Count" class="quantity-field">
+                                                                <a href="@Url.Action("ProductDetails", "POS", new { productId = productss.Details.product_id })">
+                                                                    <input type="button" value="+" class="button-plus inc button "></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>@productss.Details.price X @productss.Count = @(decimal.Parse(productss.Details.price) * productss.Count) Rs.</li>
+                                            <li>
+                                                <a class="confirm-text" href="@Url.Action("ProductDele", "POS", new { productId = productss.Details.product_id })">
+                                                    <img src="~/assets/img/icons/delete-2.svg" alt="img">
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    }
+                                </div>
+                            </div>
+                            <div class="split-card">
+                            </div>
+                            <div class="card-body pt-0 pb-2">
+                                <div class="setvalue">
+                                    <ul>
+                                        <li>
+                                            <h5>Subtotal </h5>
+                                            <h6>@ViewBag.Subtotal Rs.</h6>
+                                        </li>
+                                        <li>
+                                            <h5>Tax 18% </h5>
+                                            <h6>@(ViewBag.Tax) Rs.</h6>
+                                        </li>
+                                        <li class="total-value">
+                                            <h5>Total </h5>
+                                            <h6>@(ViewBag.Total) Rs.</h6>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="setvaluecash">
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:void(0);" class="paymentmethod">
+                                                <img src="~/assets/img/icons/cash.svg" alt="img" class="me-2">
+                                                Cash
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="paymentmethod">
+                                                <img src="~/assets/img/icons/debitcard.svg" alt="img" class="me-2">
+                                                Debit
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="paymentmethod">
+                                                <img src="~/assets/img/icons/scan.svg" alt="img" class="me-2">
+                                                Scan
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <a asp-area="" asp-controller="POS" asp-action="Innvoice">
+                                    <div class="btn-totallabel">
+
+                                        <h5>Checkout</h5>
+                                        <h6>@(ViewBag.Total) Rs.</h6>
+
+                                    </div>
+                                </a>
+                                <div class="btn-pos">
+                                    <ul>
+                                        <li>
+                                            <a class="btn">
+                                                <img src="~/assets/img/icons/pause1.svg" alt="img"
+                                                     class="me-1">Hold
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="btn">
+                                                <img src="~/assets/img/icons/edit-6.svg" alt="img"
+                                                     class="me-1">Quotation
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="btn">
+                                                <img src="~/assets/img/icons/trash12.svg" alt="img"
+                                                     class="me-1">Void
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="btn">
+                                                <img src="~/assets/img/icons/wallet1.svg" alt="img"
+                                                     class="me-1">Payment
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="btn" data-bs-toggle="modal" data-bs-target="#recents">
+                                                <img src="~/assets/img/icons/transcation.svg" alt="img" class="me-1">
+                                                Transaction
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="holdsales" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Hold order</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="hold-order">
+                        <h2>4500.00</h2>
+                    </div>
+                    <div class="form-group">
+                        <label>Order Reference</label>
+                        <input type="text">
+                    </div>
+                    <div class="para-set">
+                        <p>
+                            The current order will be set on hold. You can retreive this order from the pending order
+                            button. Providing a reference to it might help you to identify the order more quickly.
+                        </p>
+                    </div>
+                    <div class="col-lg-12">
+                        <a class="btn btn-submit me-2">Submit</a>
+                        <a class="btn btn-cancel" data-bs-dismiss="modal">Cancel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="edit" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Order</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-12 col-12">
+                            <div class="form-group">
+                                <label>Product Price</label>
+                                <input type="text" value="20">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-12 col-12">
+                            <div class="form-group">
+                                <label>Product Price</label>
+                                <select class="select">
+                                    <option>Exclusive</option>
+                                    <option>Inclusive</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-12 col-12">
+                            <div class="form-group">
+                                <label> Tax</label>
+                                <div class="input-group">
+                                    <input type="text">
+                                    <a class="scanner-set input-group-text">
+                                        %
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-12 col-12">
+                            <div class="form-group">
+                                <label>Discount Type</label>
+                                <select class="select">
+                                    <option>Fixed</option>
+                                    <option>Percentage</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-12 col-12">
+                            <div class="form-group">
+                                <label>Discount</label>
+                                <input type="text" value="20">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-12 col-12">
+                            <div class="form-group">
+                                <label>Sales Unit</label>
+                                <select class="select">
+                                    <option>Kilogram</option>
+                                    <option>Grams</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <a class="btn btn-submit me-2">Submit</a>
+                        <a class="btn btn-cancel" data-bs-dismiss="modal">Cancel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="create" tabindex="-2" aria-labelledby="create" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Create</h5>
+                    <button type="button" class="close" data-bs-toggle="modal" data-bs-target="#recents"data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-12 col-12">
+                            <div class="form-group">
+                                <label>Customer Name</label>
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-12 col-12">
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-12 col-12">
+                            <div class="form-group">
+                                <label>Phone</label>
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-12 col-12">
+                            <div class="form-group">
+                                <label>Country</label>
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-12 col-12">
+                            <div class="form-group">
+                                <label>City</label>
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-12 col-12">
+                            <div class="form-group">
+                                <label>Address</label>
+                                <input type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <a class="btn btn-submit me-2">Submit</a>
+                        <a class="btn btn-cancel" data-bs-dismiss="modal">Cancel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="delete" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Order Deletion</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="delete-order">
+                        <img src="~/assets/img/icons/close-circle1.svg" alt="img">
+                    </div>
+                    <div class="para-set text-center">
+                        <p>The current order will be deleted as no payment has been <br> made so far.</p>
+                    </div>
+                    <div class="col-lg-12 text-center">
+                        <a class="btn btn-danger me-2">Yes</a>
+                        <a class="btn btn-cancel" data-bs-dismiss="modal">No</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="recents" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Recent Transactions</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="tabs-sets">
+                        
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="purchase" role="tabpanel"
+                                 aria-labelledby="purchase-tab">
+                                <div class="table-top">
+                                    <div class="search-set">
+                                        <div class="search-input">
+                                            <a class="btn btn-searchset">
+                                                <img src="~/assets/img/icons/search-white.svg"
+                                                     alt="img">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    @*<ul class="nav nav-tabs" id="myTabs" role="tablist">
+
+                                        <li class="nav-item" role="presentation">*@
+                                            <button class="btn btn-scanner-set" data-bs-toggle="modal" data-bs-target="#create"
+                                                    type="button" aria-controls="return" aria-selected="false"
+                                                    role="tab">
+
+                                                Add Customer
+                                            </button>
+                                            @*<a href="javascript:void(0);" class="btn btn-adds" data-bs-toggle="modal"
+                data-bs-target="#recents"><i class="fa fa-plus me-2"></i>Search Customer</a>*@
+                                        @*</li>
+                                    </ul>*@
+                                    @*<div class="wordset">
+
+                                        <ul>
+                                            <li>
+                                                <a data-bs-toggle="tooltip" data-bs-placement="top" title="pdf">
+                                                    <img src="~/assets/img/icons/pdf.svg" alt="img">
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a data-bs-toggle="tooltip" data-bs-placement="top" title="excel">
+                                                    <img src="~/assets/img/icons/excel.svg" alt="img">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a data-bs-toggle="tooltip" data-bs-placement="top" title="print">
+                                                    <img src="~/assets/img/icons/printer.svg" alt="img">
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>*@
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table datanew">
+                                        <thead>
+                                            <tr>
+                                                <th hidden>updated at</th>
+                                                <th>Customer Name</th>
+                                                <th>Email</th>
+                                                <th>Phone No.</th>
+                                                <th>description</th>
+                                 
+                                                <th>Created Store By</th>
+                                                <th>Created User By</th>
+                                                <th>Action</th>
+                                            </tr>
+                                            
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var user in ViewBag.Customer)
+                                            {
+                                                <tr>
+                                                    <td hidden>@user.updated_at.ToString("MM/dd/yyyy")</td>
+
+
+                                                    <td>@user.name</td>
+                                                    <td>@user.email</td>
+                                                    <td>@user.phone</td>
+                                                    <td>@user.description</td>
+                                                    <td>@user.store_id</td>
+                                                    <td>@user.user_id</td>
+                                                    @*<td>@user.store_id</td>
+                <td>@user.user_id</td>*@
+                                                    <td>
+                                                        <a class="me-3" asp-action="UseCust" asp-route-id="@user.customer_id">
+                                                            <img src="assets/img/icons/edit.svg" alt="Edit">
+                                                        </a>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="payment" role="tabpanel">
+                                <div class="table-top">
+                                    <div class="search-set">
+                                        <div class="search-input">
+                                            <a class="btn btn-searchset">
+                                                <img src="~/assets/img/icons/search-white.svg"
+                                                     alt="img">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="wordset">
+                                        <ul>
+                                            <li>
+                                                <a data-bs-toggle="tooltip" data-bs-placement="top" title="pdf">
+                                                    <img src="~/assets/img/icons/pdf.svg" alt="img">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a data-bs-toggle="tooltip" data-bs-placement="top" title="excel">
+                                                    <img src="~/assets/img/icons/excel.svg" alt="img">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a data-bs-toggle="tooltip" data-bs-placement="top" title="print">
+                                                    <img src="~/assets/img/icons/printer.svg" alt="img">
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table datanew">
+                                        <thead>
+                                            <tr>
+                                                <th>Date</th>
+                                                <th>Reference</th>
+                                                <th>Customer</th>
+                                                <th>Amount </th>
+                                                <th class="text-end">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>2022-03-07 </td>
+                                                <td>0101</td>
+                                                <td>Walk-in Customer</td>
+                                                <td>$ 1500.00</td>
+                                                <td>
+                                                    <a class="me-3" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/eye.svg" alt="img">
+                                                    </a>
+                                                    <a class="me-3" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/edit.svg" alt="img">
+                                                    </a>
+                                                    <a class="me-3 confirm-text" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/delete.svg" alt="img">
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2022-03-07 </td>
+                                                <td>0102</td>
+                                                <td>Walk-in Customer</td>
+                                                <td>$ 1500.00</td>
+                                                <td>
+                                                    <a class="me-3" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/eye.svg" alt="img">
+                                                    </a>
+                                                    <a class="me-3" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/edit.svg" alt="img">
+                                                    </a>
+                                                    <a class="me-3 confirm-text" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/delete.svg" alt="img">
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2022-03-07 </td>
+                                                <td>0103</td>
+                                                <td>Walk-in Customer</td>
+                                                <td>$ 1500.00</td>
+                                                <td>
+                                                    <a class="me-3" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/eye.svg" alt="img">
+                                                    </a>
+                                                    <a class="me-3" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/edit.svg" alt="img">
+                                                    </a>
+                                                    <a class="me-3 confirm-text" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/delete.svg" alt="img">
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2022-03-07 </td>
+                                                <td>0104</td>
+                                                <td>Walk-in Customer</td>
+                                                <td>$ 1500.00</td>
+                                                <td>
+                                                    <a class="me-3" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/eye.svg" alt="img">
+                                                    </a>
+                                                    <a class="me-3" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/edit.svg" alt="img">
+                                                    </a>
+                                                    <a class="me-3 confirm-text" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/delete.svg" alt="img">
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2022-03-07 </td>
+                                                <td>0105</td>
+                                                <td>Walk-in Customer</td>
+                                                <td>$ 1500.00</td>
+                                                <td>
+                                                    <a class="me-3" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/eye.svg" alt="img">
+                                                    </a>
+                                                    <a class="me-3" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/edit.svg" alt="img">
+                                                    </a>
+                                                    <a class="me-3 confirm-text" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/delete.svg" alt="img">
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2022-03-07 </td>
+                                                <td>0106</td>
+                                                <td>Walk-in Customer</td>
+                                                <td>$ 1500.00</td>
+                                                <td>
+                                                    <a class="me-3" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/eye.svg" alt="img">
+                                                    </a>
+                                                    <a class="me-3" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/edit.svg" alt="img">
+                                                    </a>
+                                                    <a class="me-3 confirm-text" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/delete.svg" alt="img">
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2022-03-07 </td>
+                                                <td>0107</td>
+                                                <td>Walk-in Customer</td>
+                                                <td>$ 1500.00</td>
+                                                <td>
+                                                    <a class="me-3" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/eye.svg" alt="img">
+                                                    </a>
+                                                    <a class="me-3" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/edit.svg" alt="img">
+                                                    </a>
+                                                    <a class="me-3 confirm-text" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/delete.svg" alt="img">
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="return" role="tabpanel">
+                                <div class="table-top">
+                                    <div class="search-set">
+                                        <div class="search-input">
+                                            <a class="btn btn-searchset">
+                                                <img src="~/assets/img/icons/search-white.svg"
+                                                     alt="img">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="wordset">
+                                        <ul>
+                                            <li>
+                                                <a data-bs-toggle="tooltip" data-bs-placement="top" title="pdf">
+                                                    <img src="~/assets/img/icons/pdf.svg" alt="img">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a data-bs-toggle="tooltip" data-bs-placement="top" title="excel">
+                                                    <img src="~/assets/img/icons/excel.svg" alt="img">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a data-bs-toggle="tooltip" data-bs-placement="top" title="print">
+                                                    <img src="~/assets/img/icons/printer.svg" alt="img">
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table datanew">
+                                        <thead>
+                                            <tr>
+                                                <th>Date</th>
+                                                <th>Reference</th>
+                                                <th>Customer</th>
+                                                <th>Amount </th>
+                                                <th class="text-end">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>2022-03-07 </td>
+                                                <td>0101</td>
+                                                <td>Walk-in Customer</td>
+                                                <td>$ 1500.00</td>
+                                                <td>
+                                                    <a class="me-3" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/eye.svg" alt="img">
+                                                    </a>
+                                                    <a class="me-3" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/edit.svg" alt="img">
+                                                    </a>
+                                                    <a class="me-3 confirm-text" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/delete.svg" alt="img">
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2022-03-07 </td>
+                                                <td>0102</td>
+                                                <td>Walk-in Customer</td>
+                                                <td>$ 1500.00</td>
+                                                <td>
+                                                    <a class="me-3" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/eye.svg" alt="img">
+                                                    </a>
+                                                    <a class="me-3" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/edit.svg" alt="img">
+                                                    </a>
+                                                    <a class="me-3 confirm-text" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/delete.svg" alt="img">
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2022-03-07 </td>
+                                                <td>0103</td>
+                                                <td>Walk-in Customer</td>
+                                                <td>$ 1500.00</td>
+                                                <td>
+                                                    <a class="me-3" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/eye.svg" alt="img">
+                                                    </a>
+                                                    <a class="me-3" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/edit.svg" alt="img">
+                                                    </a>
+                                                    <a class="me-3 confirm-text" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/delete.svg" alt="img">
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2022-03-07 </td>
+                                                <td>0104</td>
+                                                <td>Walk-in Customer</td>
+                                                <td>$ 1500.00</td>
+                                                <td>
+                                                    <a class="me-3" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/eye.svg" alt="img">
+                                                    </a>
+                                                    <a class="me-3" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/edit.svg" alt="img">
+                                                    </a>
+                                                    <a class="me-3 confirm-text" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/delete.svg" alt="img">
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2022-03-07 </td>
+                                                <td>0105</td>
+                                                <td>Walk-in Customer</td>
+                                                <td>$ 1500.00</td>
+                                                <td>
+                                                    <a class="me-3" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/eye.svg" alt="img">
+                                                    </a>
+                                                    <a class="me-3" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/edit.svg" alt="img">
+                                                    </a>
+                                                    <a class="me-3 confirm-text" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/delete.svg" alt="img">
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2022-03-07 </td>
+                                                <td>0106</td>
+                                                <td>Walk-in Customer</td>
+                                                <td>$ 1500.00</td>
+                                                <td>
+                                                    <a class="me-3" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/eye.svg" alt="img">
+                                                    </a>
+                                                    <a class="me-3" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/edit.svg" alt="img">
+                                                    </a>
+                                                    <a class="me-3 confirm-text" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/delete.svg" alt="img">
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2022-03-07 </td>
+                                                <td>0107</td>
+                                                <td>Walk-in Customer</td>
+                                                <td>$ 1500.00</td>
+                                                <td>
+                                                    <a class="me-3" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/eye.svg" alt="img">
+                                                    </a>
+                                                    <a class="me-3" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/edit.svg" alt="img">
+                                                    </a>
+                                                    <a class="me-3 confirm-text" href="javascript:void(0);">
+                                                        <img src="~/assets/img/icons/delete.svg" alt="img">
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <script src="~/assets/js/jquery-3.6.0.min.js"></script>
+
+    <script src="~/assets/js/feather.min.js"></script>
+
+    <script src="~/assets/js/jquery.slimscroll.min.js"></script>
+
+    <script src="~/assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/assets/js/jquery.dataTables.min.js"></script>
+    <script src="~/assets/js/dataTables.bootstrap4.min.js"></script>
+
+    <script src="~/assets/plugins/select2/js/select2.min.js"></script>
+
+    <script src="~/assets/plugins/owlcarousel/owl.carousel.min.js"></script>
+
+    <script src="~/assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="~/assets/plugins/sweetalert/sweetalerts.min.js"></script>
+
+    <script src="~/assets/js/script.js"></script>
+</body>
+
+</html>

@@ -35,4 +35,9 @@ namespace Invoice_web_app.Models
         public DbSet<Product> Tproduct { get; set; }
         public DbSet<Customer> Tcustomer { get; set; }
     }
+    public class ProductSelection
+    {
+        public List<int> ProductIds { get; set; } = new List<int>();
+        public int custid { get; set; }
+    }
 }
