@@ -366,13 +366,14 @@
                                 <li><a href="createpurchasereturn.html">Add Purchase Return </a></li>
                             </ul>
                         </li>
-                        <li class="submenu">
-                            <a href="javascript:void(0);">
+                        <li class=" @(ViewContext.RouteData.Values["Controller"].ToString() == "Customer" ? "active" : "")">
+                            <a asp-area="" asp-controller="Customer" asp-action="index">
                                 <img src="~/assets/img/icons/users1.svg" alt="img"><span>
-                                    People
-                                </span> <span class="menu-arrow"></span>
+                                     Customer
+                                </span>
+                                @*<span class="menu-arrow"></span>*@
                             </a>
-                            <ul>
+                            @*<ul>
                                 <li><a href="customerlist.html">Customer List</a></li>
                                 <li><a href="addcustomer.html">Add Customer </a></li>
                                 <li><a href="supplierlist.html">Supplier List</a></li>
@@ -381,7 +382,7 @@
                                 <li><a href="adduser.html">Add User</a></li>
                                 <li><a href="storelist.html">Store List</a></li>
                                 <li><a href="addstore.html">Add Store</a></li>
-                            </ul>
+                            </ul>*@
                         </li>
                         <li class=" @(ViewContext.RouteData.Values["Controller"].ToString() == "Store" ? "active" : "")">
                             <a asp-area="" asp-controller="Store" asp-action="index">

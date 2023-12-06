@@ -2,3 +2,90 @@
 @{
 }
 
+<div class="content">
+    <div class="page-header">
+        <div class="page-title">
+            <h4>Customer List</h4>
+            <h6>Manage your Customers</h6>
+        </div>
+        <div class="page-btn">
+            <a asp-area="" asp-controller="Customer" asp-action="Create" class="btn btn-added">
+                <img src="assets/img/icons/plus.svg"
+                     alt="img">Add Customer
+            </a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="table-top">
+                <div class="search-set">
+                    <div class="search-path">
+                        <a class="btn btn-filter" id="filter_search">
+                            <img src="assets/img/icons/filter.svg" alt="img">
+                            <span><img src="assets/img/icons/closes.svg" alt="img"></span>
+                        </a>
+                    </div>
+                    <div class="search-input">
+                        <a class="btn btn-searchset">
+                            <img src="assets/img/icons/search-white.svg"
+                                 alt="img">
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+
+            
+            <div class="table-responsive">
+                <table class="table  datanew">
+                    <thead>
+                        <tr>
+                            <th hidden>updated at</th>
+                            <th>Customer Name</th>
+                            <th>Email</th>
+                            <th>Phone No.</th>
+                            <th>description</th>
+                            @*<th>store_id</th>
+                            <th>user_id</th>
+                            <th>Price</th>*@
+                            <th>Created Store By</th>
+                            <th>Created User By</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var user in ViewBag.Customer)
+                        {
+                            <tr>
+                                <td hidden>@user.updated_at.ToString("MM/dd/yyyy")</td>
+                               
+
+                                <td>@user.name</td>
+                                <td>@user.email</td>
+                                <td>@user.phone</td>
+                                <td>@user.description</td>
+                                <td>@user.store_id</td>
+                                <td>@user.user_id</td>
+                                @*<td>@user.store_id</td>
+                                <td>@user.user_id</td>*@
+                                <td>
+                                    <a class="me-3" asp-action="Edit" asp-route-id="@user.customer_id">
+                                        <img src="assets/img/icons/edit.svg" alt="Edit">
+                                    </a>
+                                    <a class="me-3 confirm-text" asp-action="Delete" asp-route-id="@user.customer_id">
+                                        <img src="assets/img/icons/delete.svg" alt="Delete">
+                                    </a>
+
+                                </td>
+                            </tr>
+                        }
+                        
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
