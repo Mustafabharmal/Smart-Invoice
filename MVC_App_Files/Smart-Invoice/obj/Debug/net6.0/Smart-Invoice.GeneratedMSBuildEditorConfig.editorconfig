@@ -16,6 +16,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/Views/Category/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2F0ZWdvcnkvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/Views/Category/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2F0ZWdvcnkvRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/Views/Category/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2F0ZWdvcnkvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -34,6 +46,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/Views/Login/SignUp.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTG9naW4vU2lnblVwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/Views/Product/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvZHVjdC9DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/Views/Product/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvZHVjdC9FZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/Views/Product/Index.cshtml]

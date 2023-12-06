@@ -31,5 +31,7 @@ namespace Invoice_web_app.Models
 
         public DbSet<User> Tuser { get; set; }
         public DbSet<Store> Tstore { get; set; }
+        public DbSet<Category> Tcategory { get; set; }
+        public DbSet<Product> Tproduct { get; set; }
     }
 }

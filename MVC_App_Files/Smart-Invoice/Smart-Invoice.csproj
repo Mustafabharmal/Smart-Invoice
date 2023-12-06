@@ -12,12 +12,16 @@
     <None Remove="Views\Login\" />
     <None Remove="Views\User\" />
     <None Remove="Views\Store\" />
+    <None Remove="Views\Category\" />
+    <None Remove="Views\Customer\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Product\" />
     <Folder Include="Views\Login\" />
     <Folder Include="Views\User\" />
     <Folder Include="Views\Store\" />
+    <Folder Include="Views\Category\" />
+    <Folder Include="Views\Customer\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0" />

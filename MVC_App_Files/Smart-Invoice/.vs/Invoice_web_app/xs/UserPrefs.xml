@@ -2,47 +2,53 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workbench ActiveDocument="Views/User/Edit.cshtml">
     <Files>
       <File FileName="Properties/launchSettings.json" />
       <File FileName="Views/Home/Index.cshtml" />
       <File FileName="Views/Home/Privacy.cshtml" />
-      <File FileName="Views/Shared/_Layout.cshtml" Line="567" Column="71" />
-      <File FileName="Views/Shared/_Layout.cshtml.css" />
+      <File FileName="Views/Shared/_Layout.cshtml" Line="205" Column="56" />
+      <File FileName="Views/Shared/_Layout.cshtml.css" Line="1" Column="1" />
       <File FileName="Controllers/HomeController.cs" />
-      <File FileName="Controllers/ProductController.cs" Line="9" Column="26" />
-      <File FileName="Views/Login/Index.cshtml" Line="119" Column="35" />
-      <File FileName="Controllers/LoginController.cs" Line="37" Column="38" />
+      <File FileName="Controllers/ProductController.cs" />
+      <File FileName="Views/Login/Index.cshtml" Line="54" Column="29" />
+      <File FileName="Controllers/LoginController.cs" Line="66" Column="14" />
       <File FileName="Views/Shared/_ValidationScriptsPartial.cshtml" />
-      <File FileName="appsettings.json" />
+      <File FileName="appsettings.json" Line="13" Column="1" />
       <File FileName="wwwroot/assets/js/bootstrap.bundle.min.js" />
       <File FileName="Models/ErrorViewModel.cs" Line="9" Column="2" />
-      <File FileName="Program.cs" Line="14" Column="44" />
+      <File FileName="Program.cs" Line="53" Column="1" />
       <File FileName="Views/_ViewImports.cshtml" Line="1" Column="1" />
-      <File FileName="Models/User.cs" Line="22" Column="35" />
-      <File FileName="Views/Product/Index.cshtml" Line="1" Column="1" />
-      <File FileName="Views/Shared/Error.cshtml" Line="1" Column="1" />
-      <File FileName="Views/Login/Forget.cshtml" Line="53" Column="107" />
-      <File FileName="Views/Login/SignUp.cshtml" Line="68" Column="105" />
-      <File FileName="Controllers/UserController.cs" Line="98" Column="60" />
-      <File FileName="Views/User/Index.cshtml" Line="161" Column="37" />
-      <File FileName="Views/User/AddUser.cshtml" Line="9" Column="20" />
-      <File FileName="Views/User/Edit.cshtml" Line="21" Column="80" />
+      <File FileName="Models/User.cs" Line="20" Column="40" />
+      <File FileName="Views/Product/Index.cshtml" />
+      <File FileName="Views/Shared/Error.cshtml" />
+      <File FileName="Views/Login/Forget.cshtml" Line="45" Column="49" />
+      <File FileName="Views/Login/SignUp.cshtml" Line="54" Column="40" />
+      <File FileName="Controllers/UserController.cs" Line="167" Column="10" />
+      <File FileName="Views/User/Index.cshtml" Line="189" Column="38" />
+      <File FileName="Views/User/AddUser.cshtml" Line="33" Column="67" />
+      <File FileName="Views/User/Edit.cshtml" Line="89" Column="35" />
+      <File FileName="Controllers/StoreController.cs" Line="157" Column="34" />
+      <File FileName="Views/Store/Index.cshtml" Line="130" Column="50" />
+      <File FileName="Models/Store.cs" Line="9" Column="28" />
+      <File FileName="Views/Store/Create.cshtml" Line="121" Column="7" />
+      <File FileName="Views/Store/Edit.cshtml" Line="117" Column="41" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Invoice_web_app">
             <Node name="Smart-Invoice">
+              <Node name="Dependencies" expanded="True">
+                <Node name="FrameworkReferences" expanded="True" />
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
               <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True" />
-              <Node name="Views" expanded="True">
-                <Node name="Login" expanded="True" />
-                <Node name="Product" expanded="True" />
-                <Node name="Shared" expanded="True" />
-                <Node name="User" expanded="True" />
+              <Node name="Views">
+                <Node name="Store" expanded="True" />
+                <Node name="User">
+                  <Node name="Edit.cshtml" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
@@ -50,6 +56,8 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.Smart-Invoice PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
 </Properties>
