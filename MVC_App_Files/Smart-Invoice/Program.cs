@@ -67,5 +67,6 @@ app.MapControllerRoute(
 //    // User is authenticated or already on the login page, continue to the next middleware
 //    await next();
 //});
+
 app.Run();
 

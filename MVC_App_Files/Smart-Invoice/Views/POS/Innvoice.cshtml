@@ -278,7 +278,10 @@
                         <h6>Add/Update Sales Return</h6>
                     </div>
                 </div>
-                <div class="card" id="div1">
+                @*<a href="@Url.Action("PrintDiv", "POS")" target="_blank">*@
+                
+                @*</a>*@
+                <div class="card" id="printableDiv">
                     <div class="card-body">
                         <div class="row">
                             Design hEADER
@@ -429,19 +432,25 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+                        
+                    </div>
+                </div>
+                <div class="row">
 
-                            <div class="col-lg-12">
-                                <a asp-area="" asp-controller="POS" asp-action="Savecust" class="btn btn-submit me-2">Submit</a>
-                                <a href="salesreturnlist.html" class="btn btn-cancel">Cancel</a>
-                            </div>
-                        </div>
+                    <div class="col-lg-12">
+                        
+                        <a asp-area="" asp-controller="POS" asp-action="Savecust" class="btn btn-submit me-2">Submit</a>
+                        <a asp-area="" asp-controller="POS" asp-action="Index" class="btn btn-cancel">Cancel</a>
+                        <a  target="_blank">
+                            <button onclick="printDiv()" class="btn btn-cancel" type="button">Print Div</button>
+                        </a>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
- 
+
     <script src="~/assets/js/jquery-3.6.0.min.js"></script>
 
     <script src="~/assets/js/feather.min.js"></script>
@@ -461,6 +470,22 @@
     <script src="~/assets/plugins/sweetalert/sweetalerts.min.js"></script>
 
     <script src="~/assets/js/script.js"></script>
+    <script>function printDiv() {
+            var printContents = document.getElementById("printableDiv");
+
+            // Convert the printable content to PDF
+            html2pdf()
+                .set({
+                    margin: 10,
+                    filename: 'printable_div.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { dpi: 192, letterRendering: true },
+                    jsPDF: { unit: 'pt', format: 'a4', orientation: 'portrait' }
+                })
+                .from(printContents)
+                .save();
+        }</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </body>
 
 </html>

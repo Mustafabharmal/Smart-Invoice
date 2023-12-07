@@ -39,6 +39,5 @@
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
-    <PackageReference Include="DinkToPdf" Version="1.0.7" />
   </ItemGroup>
 </Project>

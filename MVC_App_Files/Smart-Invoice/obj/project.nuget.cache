@@ -1,10 +1,9 @@
 {
   "version": 2,
-  "dgSpecHash": "c4ds3hJHoXEpH3OONjM41JzAsuEjdgs6IXg8qNoZcInhswbDypgcPBoz4UePBI+clNcQfLrwwvWvDM8spie09g==",
+  "dgSpecHash": "7BrPFHQDyxf1brD6RNQZK/EeQjJjiVIJhR7UYiOlq4xDAv7Gd2tiLwQThSiL5FH829FxFStdGFKtY8QoRG4WdQ==",
   "success": true,
   "projectFilePath": "/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/Smart-Invoice.csproj",
   "expectedPackageFiles": [
-    "/Users/mrperfect/.nuget/packages/dinktopdf/1.0.7/dinktopdf.1.0.7.nupkg.sha512",
     "/Users/mrperfect/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/Users/mrperfect/.nuget/packages/messagepack/2.1.152/messagepack.2.1.152.nupkg.sha512",
     "/Users/mrperfect/.nuget/packages/messagepack.annotations/2.1.152/messagepack.annotations.2.1.152.nupkg.sha512",
@@ -180,7 +179,6 @@
     "/Users/mrperfect/.nuget/packages/system.threading.tasks/4.3.0/system.threading.tasks.4.3.0.nupkg.sha512",
     "/Users/mrperfect/.nuget/packages/system.threading.tasks.dataflow/4.9.0/system.threading.tasks.dataflow.4.9.0.nupkg.sha512",
     "/Users/mrperfect/.nuget/packages/system.threading.tasks.extensions/4.5.4/system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "/Users/mrperfect/.nuget/packages/system.threading.thread/4.0.0/system.threading.thread.4.0.0.nupkg.sha512",
     "/Users/mrperfect/.nuget/packages/system.threading.timer/4.3.0/system.threading.timer.4.3.0.nupkg.sha512",
     "/Users/mrperfect/.nuget/packages/system.windows.extensions/4.7.0/system.windows.extensions.4.7.0.nupkg.sha512",
     "/Users/mrperfect/.nuget/packages/system.xml.readerwriter/4.3.0/system.xml.readerwriter.4.3.0.nupkg.sha512",
