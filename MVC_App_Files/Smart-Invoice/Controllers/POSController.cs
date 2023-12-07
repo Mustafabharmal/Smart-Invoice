@@ -216,7 +216,47 @@ namespace SmartInvoice.Controllers
 
             return RedirectToAction("Index");
         }
+        
+             public async Task<IActionResult> AddCust()
+        {
+            string name = Request.Form["name"];
+            string email = Request.Form["email"];
+            string phone = Request.Form["phone"];
+            //string country = Request.Form["country"];
+            //string city = Request.Form["city"];
+            //string address = Request.Form["address"];
+            //int store_id = int.Parse(Request.Form["Store"]);
+            //int store_id = int.Parse(Request.Form["Store"]);
+            string description = Request.Form["description"];
 
+            int? storeIdNullable = HttpContext.Session.GetInt32("StoreId");
+            int? Userid = HttpContext.Session.GetInt32("UserId");
+            int User_id = Userid ?? 0;
+            int store_id = storeIdNullable ?? 0;
+           
+
+            // Create a new Customer instance and add it to the database
+            var newCustomer = new Customer
+            {
+                name = name,
+                email = email,
+                phone = phone,
+                store_id = store_id,
+                user_id = User_id,
+                status = 1,
+                description = description,
+                created_at = DateTime.Now,
+                updated_at = DateTime.Now
+            };
+
+            // Add any additional logic or validation as needed
+
+            // Add the new customer to the database
+            _context.Tcustomer.Add(newCustomer);
+            _context.SaveChanges();
+            _productSelection.custid = newCustomer.customer_id;
+            return RedirectToAction("Index","POS");
+        }
     }
 }
 

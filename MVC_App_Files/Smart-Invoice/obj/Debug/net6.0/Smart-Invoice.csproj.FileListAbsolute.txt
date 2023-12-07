@@ -365,5 +365,3 @@ D:/College docs/SEM-5/.NET/Smart-Invoice/Smart-Invoice/MVC_App_Files/Smart-Invoi
 /Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/bin/Debug/net6.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 /Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/bin/Debug/net6.0/runtimes/win-arm/lib/net6.0/dotnet-aspnet-codegenerator-design.exe
 /Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/bin/Debug/net6.0/runtimes/win-arm64/lib/net6.0/dotnet-aspnet-codegenerator-design.exe
-/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/bin/Debug/net6.0/BouncyCastle.Crypto.dll
-/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/bin/Debug/net6.0/itextsharp.dll

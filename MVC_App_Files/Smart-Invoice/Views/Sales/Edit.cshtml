@@ -1,0 +1,179 @@
+﻿@{
+
+    var role = Context.Session.GetInt32("Role");
+
+}
+
+
+<div class="content">
+    <div class="page-header">
+        <div class="page-title">
+            <h4>Create Sales Return</h4>
+            <h6>Add/Update Sales Return</h6>
+        </div>
+    </div>
+    @*<a href="@Url.Action("PrintDiv", "POS")" target="_blank">*@
+
+    @*</a>*@
+    <div class="card" id="printableDiv">
+        <div class="card-body">
+            <div class="row">
+                Design hEADER
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label>Customer Name</label>
+                        <div class="row">
+                            <div class="col-lg-10 col-sm-10 col-10">
+                                <select class="form-control " disabled>
+                                    @if (ViewBag.Sales.customer_name != null)
+                                    {
+                                        <option selected>@ViewBag.Sales.customer_name</option>
+                                    }
+                                    @*else
+                                        {
+                                            <option value="0" selected>Walk-in Customer</option>
+                                        }*@
+                                    @*<option>Customer</option>*@
+                                </select>
+                            </div>
+                            @*<div class="col-lg-2 col-sm-2 col-2 ps-0">
+                                    <div class="add-icon">
+                                        <a href="javascript:void(0);">
+                                            <img src="~/assets/img/icons/plus1.svg"
+                                                 alt="img">
+                                        </a>
+                                    </div>
+                                </div>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label>Quotation Date</label>
+                        <div class="input-groupicon">
+                            <input type="text" placeholder="@ViewBag.Sales.sale_date" class="datetimepicker" disabled>
+                            <div class="addonset">
+                                <img src="~/assets/img/icons/calendars.svg" alt="img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label>Innvoice No.</label>
+                        <input type="text" value="@ViewBag.Sales.sale_id" disabled>
+                    </div>
+                </div>
+                @*<div class="col-lg-12 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label>Product</label>
+                            <div class="input-groupicon">
+                                <input type="text" placeholder="Scan/Search Product by code and select...">
+                                <div class="addonset ">
+                                    <img src="~/assets/img/icons/scanners.svg" alt="img">
+                                </div>
+                            </div>
+                        </div>
+                    </div>*@
+            </div>
+            <div class="row">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Product Name</th>
+                                <th>Net Unit Price(Rs.) </th>
+
+                                <th>QTY </th>
+                                <th>Tax 18% </th>
+                                <th>Subtotal ($) </th>
+                                <th>Total ($)</th>
+                                @*<th></th>*@
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                </td>
+                            </tr>
+                            @*@foreach (var productss in ViewBag.SelectedProducts)
+                            {
+
+                                <tr>
+
+                                    <td class="productimgname">
+                                        <a class="product-img">
+                                            <img src="data:image/png;base64,@Convert.ToBase64String(productss.Details.image)" alt="product">
+                                        </a> @productss.Details.product_name
+                                    </td>
+                                    <td>@productss.Details.price Rs.</td>
+                                    <td>@productss.Count</td>
+                                    <td>@(decimal.Parse(productss.Details.price) * (decimal)0.18) Rs.</td>
+                                    <td>@(decimal.Parse(productss.Details.price) * productss.Count) Rs.</td>
+                                    <td>
+                                        @(decimal.Parse(productss.Details.price) * productss.Count + decimal.Parse(productss.Details.price) * (decimal)0.18)
+                                    </td>
+                                </tr>
+                            }*@
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 float-md-right">
+                    <div class="total-order">
+                        <ul>
+                            <li>
+                                <h4>Order Tax</h4>
+                                <h5>@(ViewBag.Sales.tax) Rs.</h5>
+                            </li>
+                            <li>
+                                <h4>SubTotal </h4>
+                                <h5>@ViewBag.subtotal Rs.</h5>
+                            </li>
+                            @*<li>
+                                    <h4>D</h4>
+                                    <h5>0 Rs.</h5>
+                                </li>*@
+                            <li class="total">
+                                <h4>Grand Total</h4>
+                                <h5>@(ViewBag.Sales.tax + ViewBag.Sales.subtotal) Rs.</h5>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-lg-12">
+
+            @*<a asp-area="" asp-controller="POS" asp-action="Savecust" class="btn btn-submit me-2">Submit</a>*@
+            <a asp-area="" asp-action="Index" class="btn btn-cancel">Cancel</a>
+            <a target="_blank">
+                <button onclick="printDiv()" class="btn btn-cancel" type="button">Print Div</button>
+            </a>
+        </div>
+    </div>
+</div>
+<script>function printDiv() {
+        var printContents = document.getElementById("printableDiv");
+
+        // Convert the printable content to PDF
+        html2pdf()
+            .set({
+                margin: 10,
+                filename: 'printable_div.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { dpi: 192, letterRendering: true },
+                jsPDF: { unit: 'pt', format: 'a4', orientation: 'portrait' }
+            })
+            .from(printContents)
+            .save();
+    }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>

@@ -1,0 +1,78 @@
+﻿@{
+
+}
+<div class="content">
+    <div class="page-header">
+        <div class="page-title">
+            <h4>Sales List</h4>
+            <h6>Manage your sales</h6>
+        </div>
+        @*<div class="page-btn">
+            <a href="add-sales.html" class="btn btn-added">
+                <img src="assets/img/icons/plus.svg" alt="img"
+                     class="me-1">Add Sales
+            </a>
+        </div>*@
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="table-top">
+                <div class="search-set">
+                    <div class="search-path">
+                        <a class="btn btn-filter" id="filter_search">
+                            <img src="assets/img/icons/filter.svg" alt="img">
+                            <span><img src="assets/img/icons/closes.svg" alt="img"></span>
+                        </a>
+                    </div>
+                    <div class="search-input">
+                        <a class="btn btn-searchset">
+                            <img src="assets/img/icons/search-white.svg"
+                                 alt="img">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table  datanew">
+                    <thead>
+                        <tr>
+                           
+                            <th>Date</th>
+                            <th>Customer Name</th>
+                            <th>Prod Names</th>
+                            <th>quantity</th>
+                            <th>Price</th>
+                            <th>Tax</th>
+                            <th>Subtotal</th>
+                            <th>Biller</th>
+                            <th class="text-center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var sale in ViewBag.Sales)
+                        {
+                            <tr>
+                                <td>@sale.sale_date.ToString("dd/MM/yyyy")</td>
+                                <td>@sale.customer_name</td>
+                                <td>@sale.product_name</td>
+                                <td>@sale.quantity</td>
+                                <td>@sale.price</td>
+                                <td>@sale.tax</td>
+                                <td>@sale.subtotal</td>
+                                <td>@sale.user_id</td>
+                                <td class="text-center">
+                                    <a asp-action="Edit" asp-route-id="@sale.sale_id" class="dropdown-item">
+                                        <img src="assets/img/icons/eye1.svg" class="me-2" alt="img">
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>

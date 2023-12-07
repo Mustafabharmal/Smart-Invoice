@@ -33,14 +33,7 @@
     <link rel="stylesheet" href="~/assets/plugins/fontawesome/css/all.min.css">
 
     <link rel="stylesheet" href="~/assets/css/style.css">
-    <script type="text/javascript" language="javascript">function print() {
-            var printFriendly = document.getElementById("div1")
-            var printWin = window.open("about:blank", "Voucher", "menubar=no;status=no;toolbar=no;");
-            printWin.document.write("<html><head><title>Voucher Report</title></head><body><h1>Agent Wise Report</h1>" + printFriendly.innerHTML + "</body></html>");
-            printWin.document.close();
-            printWin.window.print();
-            printWin.close();
-        }</script>
+   
 </head>
 
 <body>
@@ -249,7 +242,7 @@
                                    data-feather="settings"></i>Settings
                             </a>
                             <hr class="m-0">
-                            <a class="dropdown-item logout pb-0" href="signin.html">
+                            <a class="dropdown-item logout pb-0" href="/LogOut">
                                 <img src="~/assets/img/icons/log-out.svg" class="me-2" alt="img">Logout
                             </a>
                         </div>
