@@ -20,22 +20,26 @@ namespace SmartInvoice.Controllers
         }
         public async Task<IActionResult> Index()
         {
+            var role = HttpContext.Session.GetInt32("Role");
+            var Storeid = HttpContext.Session.GetInt32("StoreId");
+
             var Customer = await _context.Tcustomer
-            .Where(u => u.status == 1) // Add this line to filter by status
+            .Where(u => u.status == 1 && u.store_id==Storeid) // Add this line to filter by status
             .OrderBy(u => u.updated_at)
             .ToListAsync();
-
-
+            if(role==0)
+            {
+                Customer = await _context.Tcustomer
+                .Where(u => u.status == 1) // Add this line to filter by status
+                .OrderBy(u => u.updated_at)
+                .ToListAsync();
+            }
             ViewBag.Customer = Customer;
             return View();
         }
         public async Task<IActionResult> Create()
         {
-            var Cat = await _context.Tcategory
-               .Where(u => u.status == 1) // Add this line to filter by status
-               .OrderBy(u => u.updated_at)
-               .ToListAsync();
-            ViewBag.cat = Cat;
+        
             var store = await _context.Tstore
                   .Where(u => u.status == 1) // Add this line to filter by status
                   .OrderBy(u => u.updated_at)
@@ -52,9 +56,19 @@ namespace SmartInvoice.Controllers
             //string country = Request.Form["country"];
             //string city = Request.Form["city"];
             //string address = Request.Form["address"];
-            int store_id = int.Parse(Request.Form["Store"]);
+            //int store_id = int.Parse(Request.Form["Store"]);
             //int store_id = int.Parse(Request.Form["Store"]);
             string description = Request.Form["description"];
+
+            int? storeIdNullable = HttpContext.Session.GetInt32("StoreId");
+            var myrole = HttpContext.Session.GetInt32("Role");
+            int? Userid = HttpContext.Session.GetInt32("UserId");
+            int User_id = Userid ?? 0;
+            int store_id = storeIdNullable ?? 0;
+            if (myrole == 0)
+            {
+                store_id = int.Parse(Request.Form["Store"]);
+            }
 
             // Create a new Customer instance and add it to the database
             var newCustomer = new Customer
@@ -63,7 +77,7 @@ namespace SmartInvoice.Controllers
                 email = email,
                 phone = phone,
                 store_id= store_id,
-                user_id=1,
+                user_id= User_id,
                 status=1,
                 description = description,
                 created_at = DateTime.Now,
@@ -109,8 +123,16 @@ namespace SmartInvoice.Controllers
             string email = Request.Form["email"];
             string phone = Request.Form["phone"];
             string description = Request.Form["description"];
-            int storeId = int.Parse(Request.Form["Store"]);
-
+            //int storeId = int.Parse(Request.Form["Store"]);
+            int? storeIdNullable = HttpContext.Session.GetInt32("StoreId");
+            var myrole = HttpContext.Session.GetInt32("Role");
+            int? Userid = HttpContext.Session.GetInt32("UserId");
+            int User_id = Userid ?? 0;
+            int store_id = storeIdNullable ?? 0;
+            if (myrole == 0)
+            {
+                store_id = int.Parse(Request.Form["Store"]);
+            }
             // Fetch the existing customer from the database
             var existingCustomer = _context.Tcustomer.FirstOrDefault(c => c.customer_id == customerId);
 
@@ -124,7 +146,7 @@ namespace SmartInvoice.Controllers
             existingCustomer.email = email;
             existingCustomer.phone = phone;
             existingCustomer.description = description;
-            existingCustomer.store_id = storeId;
+            existingCustomer.store_id = store_id;
             existingCustomer.updated_at = DateTime.Now;
 
             // Save changes to the database

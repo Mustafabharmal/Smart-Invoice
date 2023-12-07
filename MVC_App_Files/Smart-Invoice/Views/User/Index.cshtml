@@ -113,7 +113,7 @@
                             <th>Phone</th>
                             <th>Email</th>
                             <th>Role</th>
-                            @*<th>Created On</th>*@
+                            <th>Created By</th>
                             @*<th>Status</th>*@
                             <th>Action</th>
                             @*[Key]
@@ -169,14 +169,14 @@
                                     }
                                     else if (user.role == 1)
                                     {
-                                        <span style="background-color: orange; color: white; padding: 5px 10px; border-radius: 5px;" class="badges">User</span>
+                                        <span style="background-color: orange; color: white; padding: 5px 10px; border-radius: 5px;" class="badges">Shop Keeper</span>
                                     }
-                                    else
+                                    else if (user.role == 2)
                                     {
-                                        <span class="badges">Unknown Role</span>
+                                        <span style="background-color: red; color: white; padding: 5px 10px; border-radius: 5px;" class="badges">Employee</span>
                                     }
                                 </td>
-                                @*<td>@user.created_at.ToString("MM/dd/yyyy")</td>*@
+                                <td>@user.store_id</td>
                                 @*<td><span class="bg-lightgreen badges">Active</span></td>*@
                                 <td>
                                     <a class="me-3" asp-action="Edit" asp-route-id="@user.user_id">

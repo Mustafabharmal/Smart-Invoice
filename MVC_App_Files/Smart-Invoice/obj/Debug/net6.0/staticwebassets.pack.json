@@ -185,6 +185,10 @@
       "PackagePath": "staticwebassets/assets/img/icons/closes.svg"
     },
     {
+      "Id": "/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/wwwroot/assets/img/icons/customer.svg",
+      "PackagePath": "staticwebassets/assets/img/icons/customer.svg"
+    },
+    {
       "Id": "/Users/mrperfect/Work/Project/Smart-Invoice/MVC_App_Files/Smart-Invoice/wwwroot/assets/img/icons/dash1.svg",
       "PackagePath": "staticwebassets/assets/img/icons/dash1.svg"
     },

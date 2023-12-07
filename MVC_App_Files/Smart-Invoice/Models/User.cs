@@ -17,6 +17,7 @@ namespace Invoice_web_app.Models
         public string phone { get; set; }
         public string email { get; set; }
         public int role { get; set; }
+        public int store_id { get; set; }
         public int status { get; set; }
         public byte[]? avatar { get; set; }
         public DateTime created_at { get; set; }

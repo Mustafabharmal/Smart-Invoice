@@ -45,14 +45,26 @@
         <div class="header">
 
             <div class="header-left active">
-                <a asp-area="" asp-controller="Home" asp-action="index" class="logo">
-                    <img src="~/assets/img/logo.png" alt="">
-                </a>
-                <a asp-area="" asp-controller="Home" asp-action="index" class="logo-small">
-                    <img src="~/assets/img/logo-small.png" alt="">
-                </a>
-                @*<a id="toggle_btn" href="javascript:void(0);">
-                    </a>*@
+                @if (role == 2)
+                {
+                    <a class="logo">
+                        <img src="~/assets/img/logo.png" alt="">
+                    </a>
+                    <a class="logo-small">
+                        <img src="~/assets/img/logo-small.png" alt="">
+                    </a>
+                }
+                else
+                {
+                    <a asp-area="" asp-controller="Home" asp-action="index" class="logo">
+                        <img src="~/assets/img/logo.png" alt="">
+                    </a>
+                    <a asp-area="" asp-controller="Home" asp-action="index" class="logo-small">
+                        <img src="~/assets/img/logo-small.png" alt="">
+                    </a>    
+                }
+
+
             </div>
 
             <a id="mobile_btn" class="mobile_btn" href="#sidebar">
@@ -303,33 +315,34 @@
                                 <div class="row ">
                                     @foreach (var product in ViewBag.Product)
                                     {
-                                        <div class="col-lg-3 col-sm-6 d-flex">
-                                            <div class="productset flex-fill">
-                                                <div class="productsetimg">
-                                                    @if (product.image != null && product.image.Length > 0)
-                                                    {
-                                                        var base64String = Convert.ToBase64String(product.image);
+                                        <a href="@Url.Action("ProductDetails", "POS", new { productId = product.product_id })" class="product-img">
+                                            <div class="col-lg-3 col-sm-6 d-flex">
+                                                <div class="productset flex-fill">
+                                                    <div class="productsetimg">
+                                                        @if (product.image != null && product.image.Length > 0)
+                                                        {
+                                                            var base64String = Convert.ToBase64String(product.image);
 
-                                                        <a href="@Url.Action("ProductDetails", "POS", new { productId = product.product_id })" class="product-img">
                                                             <img src="data:image/png;base64,@base64String" alt="Avatar" class="img-thumbnail" />
-                                                        </a>
-                                                        @*<a href="javascript:void(0);">@user.first_name @user.last_name</a>*@
-                                                    }
-                                                    <h6>Qty: @product.quantity</h6>
-                                                    <div class="check-product">
 
-                                                        <i class="fa fa-check"></i>
+                                                            @*<a href="javascript:void(0);">@user.first_name @user.last_name</a>*@
+                                                        }
+                                                        <h6>Qty: @product.quantity</h6>
+                                                        <div class="check-product">
+
+                                                            <i class="fa fa-check"></i>
+
+                                                        </div>
 
                                                     </div>
-
-                                                </div>
-                                                <div class="productsetcontent">
-                                                    <h5>@product.category_id</h5>
-                                                    <h4>@product.product_name</h4>
-                                                    <h6>@product.price</h6>
+                                                    <div class="productsetcontent">
+                                                        <h5>@product.category_id</h5>
+                                                        <h4>@product.product_name</h4>
+                                                        <h6>@product.price</h6>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </a>
                                     }
                                 </div>
                             </div>
@@ -342,32 +355,34 @@
                                         {
                                             if (category.category_id == producti.category_id)
                                             {
-                                                <div class="col-lg-3 col-sm-6 d-flex">
-                                                    <div class="productset flex-fill">
-                                                        <div class="productsetimg">
-                                                            @if (producti.image != null && producti.image.Length > 0)
-                                                            {
-                                                                var base64String = Convert.ToBase64String(producti.image);
+                                                <a href="@Url.Action("ProductDetails", "POS", new { productId = producti.product_id })" class="product-img">
+                                                    <div class="col-lg-3 col-sm-6 d-flex">
+                                                        <div class="productset flex-fill">
+                                                            <div class="productsetimg">
+                                                                @if (producti.image != null && producti.image.Length > 0)
+                                                                {
+                                                                    var base64String = Convert.ToBase64String(producti.image);
 
-                                                                <a href="@Url.Action("ProductDetails", "POS", new { productId = producti.product_id })" class="product-img">
+
                                                                     <img src="data:image/png;base64,@base64String" alt="Avatar" class="img-thumbnail" />
-                                                                </a>
-                                                                @*<a href="javascript:void(0);">@user.first_name @user.last_name</a>*@
-                                                            }
-                                                            <h6>Qty: @producti.quantity</h6>
-                                                            <div class="check-product">
 
-                                                                <i class="fa fa-check"></i>
+                                                                    @*<a href="javascript:void(0);">@user.first_name @user.last_name</a>*@
+                                                                }
+                                                                <h6>Qty: @producti.quantity</h6>
+                                                                <div class="check-product">
 
+                                                                    <i class="fa fa-check"></i>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="productsetcontent">
+                                                                <h5>@category.product_name</h5>
+                                                                <h4>@producti.product_name</h4>
+                                                                <h6>@producti.price</h6>
                                                             </div>
                                                         </div>
-                                                        <div class="productsetcontent">
-                                                            <h5>@category.product_name</h5>
-                                                            <h4>@producti.product_name</h4>
-                                                            <h6>@producti.price</h6>
-                                                        </div>
                                                     </div>
-                                                </div>}
+                                                </a>}
                                         }
                                     </div>
                                 </div>

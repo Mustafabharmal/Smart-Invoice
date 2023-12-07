@@ -1,6 +1,5 @@
-﻿@page
-@{
-
+﻿@{
+    var role = Context.Session.GetInt32("Role");
     var user = ViewBag.User; // Replace YourUserType with the actual type of your user class
 }
 
@@ -38,15 +37,15 @@
                             <input name="username" class="form-control" value="@user.username" />
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-6 col-12">
-                        <div class="form-group">
-                            <label>Password</label>
-                            <div class="pass-group">
-                                <input name="pwd" type="password" class="pass-input form-control" value="@user.pwd" />
-                                <span class="fas toggle-password fa-eye-slash"></span>
-                            </div>
-                        </div>
-                    </div>
+                    @*<div class="col-lg-3 col-sm-6 col-12">
+        <div class="form-group">
+            <label>Password</label>
+            <div class="pass-group">*@
+                    <input name="pwd" type="password" class="pass-input form-control" value="@user.pwd" hidden />
+                    @*<span class="fas toggle-password fa-eye-slash"></span>
+                </div>
+            </div>
+        </div>*@
                     <div class="col-lg-3 col-sm-6 col-12">
                         <div class="form-group">
                             <label>Phone</label>
@@ -65,12 +64,33 @@
                             <select name="role" class="form-control">
                                 <option>Select</option>
                                 @*<option>Select</option>*@
-                                <option value="1" selected="@(user.role == 0)">Admin</option>
-                                <option value="2" selected="@(user.role == 1)">User</option>
+                                @if (role == 0)
+                                {
+                                    <option value="0" selected="@(user.role == 0)">Admin</option>
+}
+                                <option value="1" selected="@(user.role == 1)">Shop Keeper</option>
+                                <option value="2" selected="@(user.role == 2)">Employee</option>
 
                             </select>
                         </div>
                     </div>
+                    @if (role == 0)
+                    {
+                        <div class="col-lg-3 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label>Shop</label>
+                                <select name="shopid" class="form-control">
+                                    <option>Select</option>
+                                    @foreach (var Shop in ViewBag.Shop)
+                                    {
+                                        <option value="@Shop.store_id" selected="@(user.store_id ==@Shop.store_id)">@Shop.store_name</option>
+                                    }
+                                    @*<option value="1">User</option>
+                        <option value="2">Employee</option>*@
+                                </select>
+                            </div>
+                        </div>
+                    }
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label>User Image</label>
@@ -78,9 +98,9 @@
                                 <input name="avatar" type="file" class="form-control" />
                                 <div class="image-uploads">
                                     <a href="javascript:void(0);" class="product-img">
-                                        @if (user.logo != null)
+                                        @if (user.avatar != null)
                                         {
-                                            <img id="previewImage" src="data:image/png;base64,@Convert.ToBase64String(user.logo)" alt="img" class="img-thumbnail mb-2" style="max-width: 50px; max-height: 50px;" />
+                                            <img id="previewImage" src="data:image/png;base64,@Convert.ToBase64String(user.avatar)" alt="img" class="img-thumbnail mb-2" style="max-width: 50px; max-height: 50px;" />
 
                                         }
                                     </a>

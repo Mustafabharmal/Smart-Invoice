@@ -38,6 +38,8 @@ namespace Invoice_web_app.Controllers
         public IActionResult SignIn()
         {
             //return RedirectToAction("Index", "Product");
+
+
             string email = Request.Form["Email"];
             string password = Request.Form["Password"];
             
@@ -78,8 +80,10 @@ namespace Invoice_web_app.Controllers
             HttpContext.Session.SetInt32("UserId", employee.user_id);
             HttpContext.Session.SetString("FirstName", employee.first_name);
             HttpContext.Session.SetString("LastName", employee.last_name);
+            HttpContext.Session.SetInt32("StoreId", employee.store_id);
             HttpContext.Session.SetString("Username", employee.username);
             HttpContext.Session.SetString("Phone", employee.phone);
+            
             if (employee.avatar != null)
             {
                 string avatarBase64 = Convert.ToBase64String(employee.avatar);
@@ -91,6 +95,11 @@ namespace Invoice_web_app.Controllers
                 HttpContext.Session.SetString("Avtar", "");
             }
             // Redirect to the desired page after successful login
+            if(employee.role==2)
+            {
+                return RedirectToAction("Index", "POS");
+
+            }
             return RedirectToAction("Index", "Home");
    
         }

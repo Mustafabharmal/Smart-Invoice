@@ -1,6 +1,8 @@
-﻿@page
+﻿
 @{
     var Category = ViewBag.Category;
+    var role = Context.Session.GetInt32("Role");
+}
 }
 
 
@@ -21,7 +23,7 @@
                     <div class="col-lg-6 col-sm-6 col-12">
                         <div class="form-group">
                             <label>Category Name</label>
-                            <input name="CategoryName" class="form-control"  value="@Category.product_name" required />
+                            <input name="CategoryName" class="form-control" value="@Category.product_name" required />
                         </div>
                     </div>
                     <div class="col-lg-6 col-sm-6 col-12">
@@ -36,6 +38,23 @@
                             <textarea name="Description" class="form-control">@Category.description</textarea>
                         </div>
                     </div>
+                    @if (role == 0)
+                    {
+                        <div class="col-lg-3 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label>Shop</label>
+                                <select name="shopid" class="form-control">
+                                    <option>Select</option>
+                                    @foreach (var Shop in ViewBag.Shop)
+                                    {
+                                        <option value="@Shop.store_id" selected="@(Category.store_id ==@Shop.store_id)">@Shop.store_name</option>
+                                    }
+                                    @*<option value="1">User</option>
+                        <option value="2">Employee</option>*@
+                                </select>
+                            </div>
+                        </div>
+                    }
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label>Category Image</label>

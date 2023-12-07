@@ -24,25 +24,42 @@ namespace SmartInvoice.Controllers
         }
         public async Task<IActionResult> Index()
         {
+            var role = HttpContext.Session.GetInt32("Role");
+            var Storeid = HttpContext.Session.GetInt32("StoreId");
+
             var Customer = await _context.Tcustomer
-            .Where(u => u.status == 1) // Add this line to filter by status
+            .Where(u => u.status == 1 && u.store_id==Storeid) // Add this line to filter by status
             .OrderBy(u => u.updated_at)
             .ToListAsync();
-
-
-            ViewBag.Customer = Customer;
-
-
             var Category = await _context.Tcategory
-            .Where(u => u.status == 1) // Add this line to filter by status
-            .OrderBy(u => u.updated_at)
-            .ToListAsync();
-            ViewBag.Category = Category;
+         .Where(u => u.status == 1 && u.store_id == Storeid) // Add this line to filter by status
+         .OrderBy(u => u.updated_at)
+         .ToListAsync();
             var Product = await _context.Tproduct
-                 .Where(u => u.status == 1) // Add this line to filter by status
+                 .Where(u => u.status == 1 && u.store_id == Storeid) // Add this line to filter by status
                  .OrderBy(u => u.updated_at)
                  .ToListAsync();
+
+            if(role==0)
+            {
+                 Customer = await _context.Tcustomer
+            .Where(u => u.status == 1) // Add this line to filter by status
+            .OrderBy(u => u.updated_at)
+            .ToListAsync();
+                 Category = await _context.Tcategory
+             .Where(u => u.status == 1) // Add this line to filter by status
+             .OrderBy(u => u.updated_at)
+             .ToListAsync();
+                 Product = await _context.Tproduct
+                     .Where(u => u.status == 1) // Add this line to filter by status
+                     .OrderBy(u => u.updated_at)
+                     .ToListAsync();
+            }
+            ViewBag.Customer = Customer;
+            ViewBag.Category = Category;
             ViewBag.Product = Product;
+
+
             //ViewBag.prodid = prodid;
             var selectedProductIds = _productSelection.ProductIds;
             ViewBag.prodid = selectedProductIds;
@@ -52,18 +69,9 @@ namespace SmartInvoice.Controllers
             .Where(u => u.customer_id == selectedcust) // Add this line to filter by status
             .OrderBy(u => u.updated_at)
             .FirstOrDefaultAsync();
+
+
             ViewBag.selectedcustomer = selectedcustomer;
-            Console.WriteLine(selectedcustomer);
-            // var products = _context.Tproduct
-            //.Where(p => selectedProductIds.Contains(p.product_id))
-            //.GroupBy(p => p.product_id)
-            //.Select(group => new
-            //{
-            //ProductId = group.Key,
-            //Count = group.Count(),
-            //Details = group.First() // You can choose any product details from the group as they should be the same
-            // })
-            // .ToList();
             var productsliis = selectedProductIds
             .GroupBy(id => id)
             .Select(groupId => new
@@ -124,6 +132,7 @@ namespace SmartInvoice.Controllers
             .Where(u => u.customer_id == selectedcust) // Add this line to filter by status
             .OrderBy(u => u.updated_at)
             .FirstOrDefaultAsync();
+
             ViewBag.selectedcustomer = selectedcustomer;
             Console.WriteLine(selectedcustomer);
             var selectedProductIds = _productSelection.ProductIds;
@@ -180,29 +189,30 @@ namespace SmartInvoice.Controllers
             var tax = subtotal * (decimal)0.18;
             var total = subtotal + tax;
 
-            // Prepare data for saving
+            //var Storeid = HttpContext.Session.GetInt32("StoreId");
+            int? storeIdNullable = HttpContext.Session.GetInt32("StoreId");
+            int store_id = storeIdNullable ?? 0;
+            int? Userid = HttpContext.Session.GetInt32("UserId");
+            int User_id = Userid ?? 0;
             var saleData = new Sale
             {
                 sale_date = DateTime.Now,
                 customer_name = (_productSelection.custid).ToString(),
-            product_name = string.Join(",", productsliis.Select(p => p.Details.product_id)),
+                product_name = string.Join(",", productsliis.Select(p => p.Details.product_id)),
                 quantity = string.Join(",", productsliis.Select(p => p.Count.ToString())),
                 price = string.Join(",", productsliis.Select(p => p.Details.price)),
                 discount = "0", // Modify this value based on your logic
                 tax = tax.ToString(),
                 subtotal = subtotal.ToString(),
                 paid_with = 1, // Set appropriate value based on payment method
-                store_id = 1, // Modify this value if needed
-                user_id = 1, // Modify this value if needed
+                store_id = store_id, // Modify this value if needed
+                user_id = User_id, // Modify this value if needed
                 created_at = DateTime.Now,
                 updated_at = DateTime.Now
             };
 
-            // Save data to database
             _context.Tsale.Add(saleData);
             await _context.SaveChangesAsync();
-
-            // ...
 
             return RedirectToAction("Index");
         }

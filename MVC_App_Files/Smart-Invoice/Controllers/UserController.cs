@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Invoice_web_app.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Build.Tasks.Deployment.Bootstrapper;
 using Microsoft.EntityFrameworkCore;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -21,11 +22,26 @@ namespace SmartInvoice.Controllers
         }
         public async Task<IActionResult> Index()
         {
+            var role = HttpContext.Session.GetInt32("Role");
+            var Storeid= HttpContext.Session.GetInt32("StoreId");
             var users = await _context.Tuser
-            .Where(u => u.status == 1) // Add this line to filter by status
-            .OrderBy(u => u.updated_at)
-            .ToListAsync();
-           
+                  .Where(u => u.status == 1 && u.store_id == Storeid) // Add this line to filter by status
+                  .OrderBy(u => u.updated_at)
+                  .ToListAsync();
+            if (role==0)
+            {
+                 users = await _context.Tuser
+               .Where(u => u.status == 1) // Add this line to filter by status
+               .OrderBy(u => u.updated_at)
+               .ToListAsync();
+            }
+
+            var shop = await _context.Tstore
+                  .Where(u => u.status == 1) // Add this line to filter by status
+                  .OrderBy(u => u.updated_at)
+                  .ToListAsync();
+            ViewBag.Shop = shop;
+
 
             ViewBag.Users = users;
             return View();
@@ -34,6 +50,11 @@ namespace SmartInvoice.Controllers
         //[ValidateAntiForgeryToken]
         public IActionResult AddUser()
         {
+            var shop =  _context.Tstore
+                .Where(u => u.status == 1) // Add this line to filter by status
+                .OrderBy(u => u.updated_at)
+                .ToList();
+            ViewBag.Shop = shop;
             return View();
         }
         [HttpPost]
@@ -46,9 +67,21 @@ namespace SmartInvoice.Controllers
             string userName = Request.Form["username"];
             string password = Request.Form["pwd"];
             string phone = Request.Form["phone"];
-            string email = Request.Form["email"];
+            string email = Request.Form["email"]; 
             int role = int.Parse(Request.Form["role"]);
-
+            int? storeIdNullable = HttpContext.Session.GetInt32("StoreId");
+            int? Userid = HttpContext.Session.GetInt32("UserId");
+            // Handle the nullable case
+            var myrole = HttpContext.Session.GetInt32("Role");
+            int storeId = storeIdNullable ?? 0;
+            if (role==0)
+            {
+                storeId = 0;
+            }
+            if(myrole==0)
+            {
+                storeId = int.Parse(Request.Form["shopid"]);
+            }
             var passwordHasher = new PasswordHasher<object>();
             var hashedPassword = passwordHasher.HashPassword(null, password);
 
@@ -77,6 +110,7 @@ namespace SmartInvoice.Controllers
                 pwd = hashedPassword,
                 phone = phone,
                 email = email,
+                store_id= storeId,
                 role = role,
                 status = 1,
                 avatar = avatarData,
@@ -87,7 +121,11 @@ namespace SmartInvoice.Controllers
 
             _context.Tuser.Add(newUser);
             _context.SaveChanges();
-
+            var shop =  _context.Tstore
+                .Where(u => u.status == 1) // Add this line to filter by status
+                .OrderBy(u => u.updated_at)
+                .ToList();
+            ViewBag.Shop = shop;
 
             return RedirectToAction("Index");
         }
@@ -103,7 +141,11 @@ namespace SmartInvoice.Controllers
 
             // Pass the user details to the view
             ViewBag.User = user;
-
+            var shop =  _context.Tstore
+                .Where(u => u.status == 1) // Add this line to filter by status
+                .OrderBy(u => u.updated_at)
+                .ToList();
+            ViewBag.Shop = shop;
             return View();
         }
 
@@ -118,7 +160,13 @@ namespace SmartInvoice.Controllers
             string phone = Request.Form["phone"];
             string email = Request.Form["email"];
             int role = int.Parse(Request.Form["role"]);
-
+            var myrole = HttpContext.Session.GetInt32("Role");
+            int? storeIdNullable = HttpContext.Session.GetInt32("StoreId");
+            int storeId = storeIdNullable ?? 0;
+            if (myrole == 0)
+            {
+                storeId = int.Parse(Request.Form["shopid"]);
+            }
             // Find the user in the database
             var user = _context.Tuser.FirstOrDefault(u => u.user_id == userId);
 
@@ -127,7 +175,15 @@ namespace SmartInvoice.Controllers
                 // User not found, handle accordingly (e.g., show an error message)
                 return RedirectToAction("Index");
             }
-
+            IFormFile imageFile = Request.Form.Files["avatar"];
+            if (imageFile != null && imageFile.Length > 0)
+            {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    imageFile.CopyTo(ms);
+                    user.avatar = ms.ToArray();
+                }
+            }
             // Update user details
             user.first_name = firstName;
             user.last_name = lastName;
@@ -135,10 +191,16 @@ namespace SmartInvoice.Controllers
             user.phone = phone;
             user.email = email;
             user.role = role;
+            user.store_id = storeId;
             user.status = 1;
+            user.updated_at = DateTime.Now;
             // Save changes to the database
             _context.SaveChanges();
-
+            var shop =  _context.Tstore
+                .Where(u => u.status == 1) // Add this line to filter by status
+                .OrderBy(u => u.updated_at)
+                .ToList();
+            ViewBag.Shop = shop;
             return RedirectToAction("Index");
         }
 

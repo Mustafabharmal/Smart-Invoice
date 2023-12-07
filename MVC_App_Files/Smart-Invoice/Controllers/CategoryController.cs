@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using Invoice_web_app.Models;
@@ -20,17 +21,56 @@ namespace SmartInvoice.Controllers
         }
         public async Task<IActionResult> Index()
         {
+            var role = HttpContext.Session.GetInt32("Role");
+            var Storeid = HttpContext.Session.GetInt32("StoreId");
+
             var Category = await _context.Tcategory
+           .Where(u => u.status == 1 && u.store_id== Storeid) // Add this line to filter by status
+           .OrderBy(u => u.updated_at)
+           .ToListAsync();
+
+            var shop = await _context.Tstore
+                .Where(u => u.status == 1) // Add this line to filter by status
+                .OrderBy(u => u.updated_at)
+                .ToListAsync();
+            //ViewBag.Shop = shop;
+            if (role == 0)
+            {
+                 Category = await _context.Tcategory
             .Where(u => u.status == 1) // Add this line to filter by status
             .OrderBy(u => u.updated_at)
             .ToListAsync();
 
+                shop = await _context.Tstore
+                .Where(u => u.status == 1) // Add this line to filter by status
+                .OrderBy(u => u.updated_at)
+                .ToListAsync();
+            }
+
+
+            ViewBag.Shop = shop;
 
             ViewBag.Category = Category;
+
+
             return View();
         }
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+
+            var shop = _context.Tstore
+               .Where(u => u.status == 1) // Add this line to filter by status
+               .OrderBy(u => u.updated_at)
+               .ToList();
+            ViewBag.Shop = shop;
+            //if (role == 0)
+            //{
+                
+            //    shop = await _context.Tstore
+            //    .Where(u => u.status == 1) // Add this line to filter by status
+            //    .OrderBy(u => u.updated_at)
+            //    .ToListAsync();
+            //}
             return View();
         }
         [HttpPost]
@@ -40,6 +80,13 @@ namespace SmartInvoice.Controllers
             string categoryCode = Request.Form["CategoryCode"];
             string description = Request.Form["Description"];
 
+            int? storeIdNullable = HttpContext.Session.GetInt32("StoreId");
+            var myrole = HttpContext.Session.GetInt32("Role");
+            int storeId = storeIdNullable ?? 0;
+            if (myrole == 0)
+            {
+                storeId = int.Parse(Request.Form["shopid"]);
+            }
             // Validate or process the form data as needed
             if (string.IsNullOrEmpty(categoryName) || string.IsNullOrEmpty(categoryCode))
             {
@@ -52,9 +99,9 @@ namespace SmartInvoice.Controllers
                 product_name = categoryName,
                 code = categoryCode,
                 description = description,
-                                created_at = DateTime.Now,
+                created_at = DateTime.Now,
                 updated_at = DateTime.Now,
-                store_id=1,
+                store_id= storeId,
                 status=1
                 // Add other properties as needed
             };
@@ -77,6 +124,12 @@ namespace SmartInvoice.Controllers
         }
         public IActionResult Edit(int id)
         {
+            var shop = _context.Tstore
+             .Where(u => u.status == 1) // Add this line to filter by status
+             .OrderBy(u => u.updated_at)
+             .ToList();
+            ViewBag.Shop = shop;
+
             var user = _context.Tcategory.FirstOrDefault(u => u.category_id == id);
 
             if (user == null)
@@ -92,13 +145,21 @@ namespace SmartInvoice.Controllers
         [HttpPost]
         public async Task<IActionResult> Update()
         {
-            int storeId = int.Parse(Request.Form["category_id"]);
+            int Catid = int.Parse(Request.Form["category_id"]);
             string categoryName = Request.Form["CategoryName"];
             string categoryCode = Request.Form["CategoryCode"];
             string description = Request.Form["Description"];
 
+            int? storeIdNullable = HttpContext.Session.GetInt32("StoreId");
+            var myrole = HttpContext.Session.GetInt32("Role");
+            int storeId = storeIdNullable ?? 0;
+            if (myrole == 0)
+            {
+                storeId = int.Parse(Request.Form["shopid"]);
+            }
+
             // Find the existing category
-            var existingCategory = _context.Tcategory.FirstOrDefault(c => c.category_id == storeId);
+            var existingCategory = _context.Tcategory.FirstOrDefault(c => c.category_id == Catid);
 
             if (existingCategory != null)
             {
@@ -118,7 +179,7 @@ namespace SmartInvoice.Controllers
                 existingCategory.product_name = categoryName;
                 existingCategory.code = categoryCode;
                 existingCategory.description = description;
-                existingCategory.store_id = 1; // You might not need to update the store_id, depending on your use case
+                existingCategory.store_id = storeId; // You might not need to update the store_id, depending on your use case
                 existingCategory.updated_at = DateTime.Now;
 
                 if (categoryImageData != null)

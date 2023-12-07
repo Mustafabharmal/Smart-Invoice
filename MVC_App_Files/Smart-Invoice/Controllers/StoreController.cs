@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using Invoice_web_app.Models;
@@ -20,11 +21,22 @@ namespace SmartInvoice.Controllers
         }
         public async Task<IActionResult> Index()
         {
+            var role = HttpContext.Session.GetInt32("Role");
+            var Storeid = HttpContext.Session.GetInt32("StoreId");
             var shop = await _context.Tstore
                   .Where(u => u.status == 1) // Add this line to filter by status
                   .OrderBy(u => u.updated_at)
                   .ToListAsync();
             ViewBag.Shop = shop;
+            //var users = await _context.Tuser
+            //     .Where(u => u.status == 1 && u.store_id == Storeid) // Add this line to filter by status
+            //     .OrderBy(u => u.updated_at)
+            //     .ToListAsync();
+
+            //if (role == 0)
+            //{
+               
+            //}
             return View();
         }
         public IActionResult Create()

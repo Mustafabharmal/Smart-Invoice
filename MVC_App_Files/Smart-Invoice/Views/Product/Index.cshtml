@@ -126,7 +126,7 @@
                             <th>Description</th>
                             <th>Price</th>
                             <th>Created Store By</th>
-                            <th>Created User By</th>
+                            @*<th>Created User By</th>*@
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -153,7 +153,7 @@
                                 <td>@user.description</td>
                                 <td>@user.price</td>
                                 <td>@user.store_id</td>
-                                <td>@user.user_id</td>
+                                @*<td>@user.user_id</td>*@
                                 <td>
                                     <a class="me-3" asp-action="Edit" asp-route-id="@user.product_id">
                                         <img src="assets/img/icons/edit.svg" alt="Edit">

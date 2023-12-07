@@ -1,5 +1,6 @@
-﻿@page
+﻿
 @{
+    var role = Context.Session.GetInt32("Role");
 }
 <div class="content">
     <div class="page-header">
@@ -38,23 +39,26 @@
                             <textarea name="description" class="form-control">@ViewBag.Customer.description</textarea>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-6 col-12">
-                        <div class="form-group">
-                            <label>Store</label>
-                            <select name="Store" class="form-control">
-                                <option selected disabled>Select</option>
-                                @foreach (var user in ViewBag.sto)
-                                {
-                                    <option value="@user.store_id" selected="@(user.store_id == ViewBag.Customer.store_id)">@user.store_name</option>
-                                }
-                            </select>
+                    @if (role == 0)
+                        {
+                        <div class="col-lg-3 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label>Store</label>
+                                <select name="Store" class="form-control">
+                                    <option selected disabled>Select</option>
+                                    @foreach (var user in ViewBag.sto)
+                                        {
+                                        <option value="@user.store_id" selected="@(user.store_id == ViewBag.Customer.store_id)">@user.store_name</option>
+                                        }
+                                </select>
+                            </div>
+                        </div>
+                        }
+                        <div class="col-lg-12">
+                            <button type="submit" class="btn btn-submit me-2">Submit</button>
+                            <a href="javascript:void(0);" class="btn btn-cancel">Cancel</a>
                         </div>
                     </div>
-                    <div class="col-lg-12">
-                        <button type="submit" class="btn btn-submit me-2">Submit</button>
-                        <a href="javascript:void(0);" class="btn btn-cancel">Cancel</a>
-                    </div>
-                </div>
             </form>
             </div>
 

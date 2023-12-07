@@ -57,7 +57,7 @@ app.MapControllerRoute(
 //    var userId = context.Session.GetInt32("UserId");
 //    var path = context.Request.Path;
 
-//    if (userId==null && !path.StartsWithSegments("/Login", StringComparison.OrdinalIgnoreCase))
+//    if (userId == null && !path.StartsWithSegments("/Login", StringComparison.OrdinalIgnoreCase))
 //    {
 //        // User is not authenticated and not already on the login page, redirect to the login page
 //        context.Response.Redirect("/Login/Index");
