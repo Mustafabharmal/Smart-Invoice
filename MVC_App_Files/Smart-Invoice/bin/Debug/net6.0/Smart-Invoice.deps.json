@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "Smart-Invoice/1.0.0": {
         "dependencies": {
+          "DinkToPdf": "1.0.7",
           "Microsoft.EntityFrameworkCore": "6.0.0",
           "Microsoft.EntityFrameworkCore.Analyzers": "7.0.12",
           "Microsoft.EntityFrameworkCore.Design": "6.0.0",
@@ -18,6 +19,17 @@
         },
         "runtime": {
           "Smart-Invoice.dll": {}
+        }
+      },
+      "DinkToPdf/1.0.7": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "System.Collections.Concurrent": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.InteropServices": "4.3.0",
+          "System.Threading.Thread": "4.0.0"
         }
       },
       "Humanizer.Core/2.8.26": {
@@ -2231,6 +2243,11 @@
       },
       "System.Threading.Tasks.Dataflow/4.9.0": {},
       "System.Threading.Tasks.Extensions/4.5.4": {},
+      "System.Threading.Thread/4.0.0": {
+        "dependencies": {
+          "System.Runtime": "4.3.0"
+        }
+      },
       "System.Threading.Timer/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -2299,6 +2316,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "DinkToPdf/1.0.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aRpCvsK9dFeu3iXpzUI3c4DZtT62GTiQI+TrNamashRWSqg8jKThCzliPNMr7xifKYz2FslY2IgsKJJwBj0mjQ==",
+      "path": "dinktopdf/1.0.7",
+      "hashPath": "dinktopdf.1.0.7.nupkg.sha512"
     },
     "Humanizer.Core/2.8.26": {
       "type": "package",
@@ -3524,6 +3548,13 @@
       "sha512": "sha512-zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg==",
       "path": "system.threading.tasks.extensions/4.5.4",
       "hashPath": "system.threading.tasks.extensions.4.5.4.nupkg.sha512"
+    },
+    "System.Threading.Thread/4.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gIdJqDXlOr5W9zeqFErLw3dsOsiShSCYtF9SEHitACycmvNvY8odf9kiKvp6V7aibc8C4HzzNBkWXjyfn7plbQ==",
+      "path": "system.threading.thread/4.0.0",
+      "hashPath": "system.threading.thread.4.0.0.nupkg.sha512"
     },
     "System.Threading.Timer/4.3.0": {
       "type": "package",

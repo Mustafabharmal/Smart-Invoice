@@ -34,6 +34,7 @@ namespace Invoice_web_app.Models
         public DbSet<Category> Tcategory { get; set; }
         public DbSet<Product> Tproduct { get; set; }
         public DbSet<Customer> Tcustomer { get; set; }
+        public DbSet<Sale> Tsale { get; set; }
     }
     public class ProductSelection
     {

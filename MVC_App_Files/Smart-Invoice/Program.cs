@@ -9,7 +9,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSession();
 string connection = builder.Configuration.GetConnectionString("DefualtConnection");
 builder.Services.AddSingleton<ProductSelection>();
-
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<UserDBContext>(options => 
