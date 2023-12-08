@@ -26,7 +26,17 @@ namespace Invoice_web_app.Controllers
                  .Where(u => u.status == 1 && u.store_id == Storeid) // Add this line to filter by status
                  .OrderBy(u => u.updated_at)
                  .CountAsync();
-          
+
+            var ProductHead = await _context.Tproduct
+                .Where(u => u.status == 1 && u.store_id == Storeid) // Add this line to filter by status
+                .OrderBy(u => u.created_at).Take(7)
+                .ToListAsync();
+
+            var CatHead = await _context.Tcategory
+                .Where(u => u.status == 1 && u.store_id == Storeid) // Add this line to filter by status
+                .OrderBy(u => u.created_at).Take(7)
+                .ToListAsync();
+
             var UserCount = await _context.Tstore
                   .Where(u => u.status == 1) // Add this line to filter by status
                   .OrderBy(u => u.updated_at)
@@ -56,18 +66,29 @@ namespace Invoice_web_app.Controllers
                 SalesCount = await _context.Tsale
                 .OrderBy(u => u.updated_at)
                 .CountAsync();
+
                 CustomerCount = await _context.Tcustomer
                .Where(u => u.status == 1) // Add this line to filter by status
                .OrderBy(u => u.updated_at)
                .CountAsync();
+
+                 ProductHead = await _context.Tproduct
+                .Where(u => u.status == 1) // Add this line to filter by status
+                .OrderBy(u => u.created_at).Take(5)
+                .ToListAsync();
+
+                 CatHead = await _context.Tcategory
+                    .Where(u => u.status == 1) // Add this line to filter by status
+                    .OrderBy(u => u.created_at).Take(5)
+                    .ToListAsync();
             }
 
             ViewBag.CustomerCount = CustomerCount;
-
             ViewBag.SalesCount = SalesCount;
             ViewBag.ProductCount = ProductCount;
             ViewBag.UserCount = UserCount;
-
+            ViewBag.CatHead = CatHead;
+            ViewBag.ProductHead = ProductHead;
             return View();
         }
 

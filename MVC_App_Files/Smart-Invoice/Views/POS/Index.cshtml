@@ -316,35 +316,35 @@
 
                                     @foreach (var product in ViewBag.Product)
                                     {
-                                        <a href="@Url.Action("ProductDetails", "POS", new { productId = product.product_id })" class="product-img">
+                                       
                                             <div class="col-lg-3 col-sm-6 d-flex">
-                                                <div class="productset flex-fill">
-                                                    <div class="productsetimg">
-                                                        @if (product.image != null && product.image.Length > 0)
-                                                        {
-                                                            var base64String = Convert.ToBase64String(product.image);
+                                                <a href="@Url.Action("ProductDetails", "POS", new { productId = product.product_id })" class="product-img">
+                                                    <div class="productset flex-fill">
+                                                        <div class="productsetimg">
+                                                            @if (product.image != null && product.image.Length > 0)
+                                                            {
+                                                                var base64String = Convert.ToBase64String(product.image);
 
-                                                            <img src="data:image/png;base64,@base64String" alt="Avatar" class="img-thumbnail" />
+                                                                <img src="data:image/png;base64,@base64String" alt="Avatar" class="img-thumbnail" />
 
-                                                            @*<a href="javascript:void(0);">@user.first_name @user.last_name</a>*@
-                                                        }
-                                                        <h6>Qty: @product.quantity</h6>
-                                                        <div class="check-product">
+                                                                @*<a href="javascript:void(0);">@user.first_name @user.last_name</a>*@
+                                                            }
+                                                            <h6>Qty: @product.quantity</h6>
+                                                            <div class="check-product">
 
-                                                            <i class="fa fa-check"></i>
+                                                                <i class="fa fa-check"></i>
+
+                                                            </div>
 
                                                         </div>
-
+                                                        <div class="productsetcontent">
+                                                            <h5>@product.category_id</h5>
+                                                            <h4>@product.product_name</h4>
+                                                            <h6>@product.price</h6>
+                                                        </div>
                                                     </div>
-                                                    <div class="productsetcontent">
-                                                        <h5>@product.category_id</h5>
-                                                        <h4>@product.product_name</h4>
-                                                        <h6>@product.price</h6>
-                                                    </div>
-                                                </div>
+                                                </a>
                                             </div>
-                                        </a>
-
                                     }
                                 </div>
                             </div>
@@ -357,34 +357,36 @@
                                         {
                                             if (category.category_id == producti.category_id)
                                             {
-                                                <a href="@Url.Action("ProductDetails", "POS", new { productId = producti.product_id })" class="product-img">
                                                     <div class="col-lg-3 col-sm-6 d-flex">
-                                                        <div class="productset flex-fill">
-                                                            <div class="productsetimg">
-                                                                @if (producti.image != null && producti.image.Length > 0)
-                                                                {
-                                                                    var base64String = Convert.ToBase64String(producti.image);
+
+                                                        <a href="@Url.Action("ProductDetails", "POS", new { productId = producti.product_id })" class="product-img">
+                                                            <div class="productset flex-fill">
+                                                                <div class="productsetimg">
+                                                                    @if (producti.image != null && producti.image.Length > 0)
+                                                                    {
+                                                                        var base64String = Convert.ToBase64String(producti.image);
 
 
-                                                                    <img src="data:image/png;base64,@base64String" alt="Avatar" class="img-thumbnail" />
+                                                                        <img src="data:image/png;base64,@base64String" alt="Avatar" class="img-thumbnail" />
 
-                                                                    @*<a href="javascript:void(0);">@user.first_name @user.last_name</a>*@
-                                                                }
-                                                                <h6>Qty: @producti.quantity</h6>
-                                                                <div class="check-product">
+                                                                        @*<a href="javascript:void(0);">@user.first_name @user.last_name</a>*@
+                                                                    }
+                                                                    <h6>Qty: @producti.quantity</h6>
+                                                                    <div class="check-product">
 
-                                                                    <i class="fa fa-check"></i>
+                                                                        <i class="fa fa-check"></i>
 
+                                                                    </div>
+                                                                </div>
+                                                                <div class="productsetcontent">
+                                                                    <h5>@category.product_name</h5>
+                                                                    <h4>@producti.product_name</h4>
+                                                                    <h6>@producti.price</h6>
                                                                 </div>
                                                             </div>
-                                                            <div class="productsetcontent">
-                                                                <h5>@category.product_name</h5>
-                                                                <h4>@producti.product_name</h4>
-                                                                <h6>@producti.price</h6>
-                                                            </div>
-                                                        </div>
+                                                        </a>
                                                     </div>
-                                                </a>}
+                                                }
                                         }
                                     </div>
                                 </div>

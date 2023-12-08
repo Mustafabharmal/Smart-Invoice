@@ -98,9 +98,9 @@
                                 <td>
                                 </td>
                             </tr>
-                            @*@foreach (var productss in ViewBag.SelectedProducts)
+                        <tbody>
+                            @foreach (var productss in ViewBag.SelectedProducts)
                             {
-
                                 <tr>
 
                                     <td class="productimgname">
@@ -115,8 +115,54 @@
                                     <td>
                                         @(decimal.Parse(productss.Details.price) * productss.Count + decimal.Parse(productss.Details.price) * (decimal)0.18)
                                     </td>
+                                    @*<td>
+                        <a class="delete-set">
+                            <img src="~/assets/img/icons/delete.svg"
+                                 alt="svg">
+                        </a>
+                    </td>*@
                                 </tr>
-                            }*@
+                            }
+                            @*<tr>
+                <td class="productimgname">
+                    <a class="product-img">
+                        <img src="~/assets/img/product/product6.jpg" alt="product">
+                    </a>
+                    <a href="javascript:void(0);">Macbook Pro</a>
+                </td>
+                <td>150</td>
+                <td>500</td>
+                <td>500</td>
+                <td>100</td>
+                <td>50</td>
+                <td>250</td>
+                <td>
+                    <a class="delete-set">
+                        <img src="~/assets/img/icons/delete.svg"
+                             alt="svg">
+                    </a>
+                </td>
+            </tr>*@
+                        </tbody>
+                        @*@foreach (var productss in ViewBag.SelectedProducts)
+        {
+
+            <tr>
+
+                <td class="productimgname">
+                    <a class="product-img">
+                        <img src="data:image/png;base64,@Convert.ToBase64String(productss.Details.image)" alt="product">
+                    </a> @productss.Details.product_name
+                </td>
+                <td>@productss.Details.price Rs.</td>
+                <td>@productss.Count</td>
+                <td>@(decimal.Parse(productss.Details.price) * (decimal)0.18) Rs.</td>
+                <td>@(decimal.Parse(productss.Details.price) * productss.Count) Rs.</td>
+                <td>
+                    @(decimal.Parse(productss.Details.price) * productss.Count + decimal.Parse(productss.Details.price) * (decimal)0.18)
+                </td>
+            </tr>
+        }*@
 
                         </tbody>
                     </table>

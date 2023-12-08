@@ -13,9 +13,11 @@ namespace SmartInvoice.Controllers
     public class SalesController : Controller
     {
         private readonly UserDBContext _context;
-        public SalesController(UserDBContext context)
+        private readonly ProductSelection _productSelection;
+        public SalesController(UserDBContext context, ProductSelection productSelection)
         {
             _context = context;
+            _productSelection = productSelection;
         }
         // GET: /<controller>/
         public async Task<IActionResult> Index()
@@ -37,13 +39,42 @@ namespace SmartInvoice.Controllers
         }
         public async Task<IActionResult> Edit(int id)
         {
+
             var Sales = await _context.Tsale
                  .Where(u => u.sale_id == id) // Add this line to filter by status
                  .OrderBy(u => u.updated_at)
                  .FirstOrDefaultAsync();
-
             ViewBag.Sales = Sales;
-
+            _productSelection.ProductIds.Clear();
+            if (Sales != null)
+            {
+                // Split the product_id string into an array of strings
+                var productIdsStringArray = Sales.product_name.Split(',');
+                foreach (var sale in productIdsStringArray)
+                {
+                    // Assuming 'sale' represents a product ID in string format
+                    if (int.TryParse(sale, out int productId))
+                    {
+                        _productSelection.ProductIds.Add(productId);
+                    }
+                    else
+                    {
+                        // Handle the case where parsing fails (optional)
+                    }
+                }
+                // Now, 'productIds' is a List<int> containing the parsed product IDs
+            }
+            var selectedProductIds = _productSelection.ProductIds;
+            ViewBag.prodid = selectedProductIds;
+            var productsliis = selectedProductIds.GroupBy(id => id)
+                .Select(groupId => new
+             {
+                 ProductId = groupId.Key,
+                 Count = groupId.Count(),
+                 Details = _context.Tproduct.FirstOrDefault(p => p.product_id == groupId.Key)
+             })
+             .ToList();
+            ViewBag.SelectedProducts = productsliis;
             return View();
         }
     }
