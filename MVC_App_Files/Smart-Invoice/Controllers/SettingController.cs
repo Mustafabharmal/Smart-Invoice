@@ -35,6 +35,7 @@ namespace SmartInvoice.Controllers
                 .Where(u => u.status == 1) // Add this line to filter by status
                 .OrderBy(u => u.updated_at)
                 .ToList();
+            
             ViewBag.Shop = shop;
             return View();
         }
