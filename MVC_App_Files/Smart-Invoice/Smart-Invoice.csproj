@@ -16,6 +16,7 @@
     <None Remove="Views\Customer\" />
     <None Remove="Views\POS\" />
     <None Remove="Views\Sales\" />
+    <None Remove="Views\Setting\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Product\" />
@@ -26,6 +27,7 @@
     <Folder Include="Views\Customer\" />
     <Folder Include="Views\POS\" />
     <Folder Include="Views\Sales\" />
+    <Folder Include="Views\Setting\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0" />

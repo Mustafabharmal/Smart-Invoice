@@ -1,7 +1,6 @@
 ﻿@{
 
     var role = Context.Session.GetInt32("Role");
-
 }
 
 
@@ -99,8 +98,10 @@
                                 </td>
                             </tr>
                         <tbody>
+                          
                             @foreach (var productss in ViewBag.SelectedProducts)
-                            {
+                                {
+
                                 <tr>
 
                                     <td class="productimgname">
@@ -110,10 +111,11 @@
                                     </td>
                                     <td>@productss.Details.price Rs.</td>
                                     <td>@productss.Count</td>
-                                    <td>@(decimal.Parse(productss.Details.price) * (decimal)0.18) Rs.</td>
-                                    <td>@(decimal.Parse(productss.Details.price) * productss.Count) Rs.</td>
+                                    <td>@(decimal.Parse(productss.Details.price) * (decimal)0.18 * (int)productss.Count ) Rs.</td>
+                                    <td>@(decimal.Parse(productss.Details.price) * (int)productss.Count) Rs.</td>
                                     <td>
-                                        @(decimal.Parse(productss.Details.price) * productss.Count + decimal.Parse(productss.Details.price) * (decimal)0.18)
+                                        @(decimal.Parse(productss.Details.price) * (int)productss.Count * (decimal)0.18 + decimal.Parse(productss.Details.price) * (int)productss.Count)
+                                        
                                     </td>
                                     @*<td>
                         <a class="delete-set">
@@ -178,7 +180,7 @@
                             </li>
                             <li>
                                 <h4>SubTotal </h4>
-                                <h5>@ViewBag.subtotal Rs.</h5>
+                                <h5>@ViewBag.Sales.subtotal Rs.</h5>
                             </li>
                             @*<li>
                                     <h4>D</h4>
@@ -186,7 +188,7 @@
                                 </li>*@
                             <li class="total">
                                 <h4>Grand Total</h4>
-                                <h5>@(ViewBag.Sales.tax + ViewBag.Sales.subtotal) Rs.</h5>
+                                <h5>@(decimal.Parse(ViewBag.Sales.tax) + decimal.Parse(ViewBag.Sales.subtotal)) Rs.</h5>
                             </li>
                         </ul>
                     </div>

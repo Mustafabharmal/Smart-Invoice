@@ -50,12 +50,17 @@ namespace SmartInvoice.Controllers
             {
                 // Split the product_id string into an array of strings
                 var productIdsStringArray = Sales.product_name.Split(',');
+                var quantityStringArray = Sales.quantity.Split(',');
                 foreach (var sale in productIdsStringArray)
                 {
                     // Assuming 'sale' represents a product ID in string format
-                    if (int.TryParse(sale, out int productId))
+                    if (int.TryParse(sale, out int productId) && int.TryParse(sale, out int Count))
                     {
-                        _productSelection.ProductIds.Add(productId);
+                        for (int j = 0; j < Count-1; j++)
+                        {
+                            _productSelection.ProductIds.Add(productId);
+                        }
+
                     }
                     else
                     {

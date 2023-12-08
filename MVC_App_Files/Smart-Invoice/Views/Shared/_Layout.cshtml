@@ -236,14 +236,14 @@
                                 </div>
                             </div>
                             <hr class="m-0">
-                            <a class="dropdown-item" href="profile.html">
+                            <a class="dropdown-item" asp-area="" asp-controller="Setting" asp-action="index">
                                 <i class="me-2" data-feather="user"></i> My
                                 Profile
                             </a>
-                            <a class="dropdown-item" href="generalsettings.html">
+                            @*<a class="dropdown-item" href="generalsettings.html">
                                 <i class="me-2"
                                    data-feather="settings"></i>Settings
-                            </a>
+                            </a>*@
                             <hr class="m-0">
                             <a class="dropdown-item logout pb-0" href="/LogOut">
                                 <img src="~/assets/img/icons/log-out.svg" class="me-2" alt="img">Logout
@@ -386,12 +386,13 @@
                                 </span> <span class="menu-arrow"></span>
                             </a>
                             <ul>
-                                <li><a href="generalsettings.html">General Settings</a></li>
-                                <li><a href="emailsettings.html">Email Settings</a></li>
+                                <li><a class=" @(ViewContext.RouteData.Values["Controller"].ToString() == "Setting" ? "active" : "")" asp-area="" asp-controller="Setting" asp-action="index">General Settings</a></li>
+                                @*<li><a class=" @(ViewContext.RouteData.Values["Controller"].ToString() == "Setting" ? "active" : "")" asp-area="" asp-controller="Setting" asp-action="Forget">Forget Password</a></li>*@
+                                @*<li><a href="emailsettings.html">Email Settings</a></li>
                                 <li><a href="paymentsettings.html">Payment Settings</a></li>
                                 <li><a href="currencysettings.html">Currency Settings</a></li>
                                 <li><a href="grouppermissions.html">Group Permissions</a></li>
-                                <li><a href="taxrates.html">Tax Rates</a></li>
+                                <li><a href="taxrates.html">Tax Rates</a></li>*@
                             </ul>
                         </li>
                     </ul>
