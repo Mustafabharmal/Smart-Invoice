@@ -1,66 +1,72 @@
 ﻿<Properties StartupConfiguration="{B9E3BC7F-2C3D-4C37-AFBD-9948CF3F59B9}|Invoice_web_app">
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Smart-Invoice PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
     <Files>
       <File FileName="Properties/launchSettings.json" />
-      <File FileName="Views/Home/Index.cshtml" Line="178" Column="30" />
+      <File FileName="Views/Home/Index.cshtml" />
       <File FileName="Views/Home/Privacy.cshtml" />
-      <File FileName="Views/Shared/_Layout.cshtml" Line="389" Column="185" />
+      <File FileName="Views/Shared/_Layout.cshtml" />
       <File FileName="Views/Shared/_Layout.cshtml.css" />
-      <File FileName="Controllers/HomeController.cs" Line="37" Column="51" />
-      <File FileName="Controllers/ProductController.cs" Line="50" Column="38" />
+      <File FileName="Controllers/HomeController.cs" />
+      <File FileName="Controllers/ProductController.cs" />
       <File FileName="Views/Login/Index.cshtml" />
-      <File FileName="Controllers/LoginController.cs" Line="80" Column="49" />
+      <File FileName="Controllers/LoginController.cs" />
       <File FileName="Views/Shared/_ValidationScriptsPartial.cshtml" />
-      <File FileName="appsettings.json" Line="11" Column="4" />
+      <File FileName="appsettings.json" />
       <File FileName="wwwroot/assets/js/bootstrap.bundle.min.js" />
       <File FileName="Models/ErrorViewModel.cs" />
       <File FileName="Program.cs" Line="53" Column="1" />
-      <File FileName="Views/_ViewImports.cshtml" Line="1" Column="1" />
-      <File FileName="Models/User.cs" Line="24" Column="49" />
-      <File FileName="Views/Product/Index.cshtml" Line="158" Column="102" />
-      <File FileName="Views/Shared/Error.cshtml" Line="1" Column="1" />
+      <File FileName="Views/_ViewImports.cshtml" />
+      <File FileName="Models/User.cs" />
+      <File FileName="Views/Product/Index.cshtml" />
+      <File FileName="Views/Shared/Error.cshtml" />
       <File FileName="Views/Login/Forget.cshtml" />
       <File FileName="Views/Login/SignUp.cshtml" />
-      <File FileName="Controllers/UserController.cs" Line="166" Column="29" />
-      <File FileName="Views/User/Index.cshtml" Line="172" Column="160" />
-      <File FileName="Views/User/AddUser.cshtml" Line="91" Column="10" />
-      <File FileName="Views/User/Edit.cshtml" Line="2" Column="3" />
-      <File FileName="Controllers/StoreController.cs" Line="21" Column="10" />
-      <File FileName="Views/Store/Index.cshtml" Line="1" Column="1" />
-      <File FileName="Models/Store.cs" Line="17" Column="24" />
-      <File FileName="Views/Store/Create.cshtml" Line="1" Column="1" />
-      <File FileName="Views/Store/Edit.cshtml" Line="1" Column="1" />
-      <File FileName="Controllers/CategoryController.cs" Line="20" Column="32" />
+      <File FileName="Controllers/UserController.cs" />
+      <File FileName="Views/User/Index.cshtml" />
+      <File FileName="Views/User/AddUser.cshtml" />
+      <File FileName="Views/User/Edit.cshtml" />
+      <File FileName="Controllers/StoreController.cs" />
+      <File FileName="Views/Store/Index.cshtml" />
+      <File FileName="Models/Store.cs" />
+      <File FileName="Views/Store/Create.cshtml" />
+      <File FileName="Views/Store/Edit.cshtml" />
+      <File FileName="Controllers/CategoryController.cs" />
       <File FileName="Models/Category.cs" />
-      <File FileName="Views/Category/Index.cshtml" Line="12" Column="76" />
-      <File FileName="Views/Category/Create.cshtml" Line="3" Column="4" />
-      <File FileName="Views/Category/Edit.cshtml" Line="41" Column="20" />
-      <File FileName="Models/Product.cs" Line="15" Column="28" />
-      <File FileName="Views/Product/Create.cshtml" Line="3" Column="5" />
-      <File FileName="Views/Product/Edit.cshtml" Line="3" Column="49" />
-      <File FileName="Controllers/CustomerController.cs" Line="27" Column="39" />
+      <File FileName="Views/Category/Index.cshtml" />
+      <File FileName="Views/Category/Create.cshtml" />
+      <File FileName="Views/Category/Edit.cshtml" />
+      <File FileName="Models/Product.cs" />
+      <File FileName="Views/Product/Create.cshtml" />
+      <File FileName="Views/Product/Edit.cshtml" />
+      <File FileName="Controllers/CustomerController.cs" />
       <File FileName="Models/Customer.cs" />
       <File FileName="Views/Customer/Index.cshtml" />
-      <File FileName="Views/Customer/Create.cshtml" Line="64" Column="20" />
-      <File FileName="Views/Customer/Edit.cshtml" Line="47" Column="52" />
-      <File FileName="Controllers/POSController.cs" Line="180" Column="26" />
-      <File FileName="Views/POS/Index.cshtml" Line="247" Column="29" />
-      <File FileName="Views/POS/Innvoice.cshtml" Line="261" Column="25" />
-      <File FileName="Models/Sale.cs" Line="17" Column="35" />
-      <File FileName="Controllers/SalesController.cs" Line="64" Column="22" />
-      <File FileName="Views/Sales/Index.cshtml" Line="62" Column="51" />
-      <File FileName="Views/Sales/Edit.cshtml" Line="114" Column="121" />
-      <File FileName="wwwroot/assets/js/script.js" Line="103" Column="17" />
-      <File FileName="wwwroot/assets/js/moment.min.js" Line="1896" Column="31" />
-      <File FileName="Controllers/SettingController.cs" Line="48" Column="38" />
-      <File FileName="Views/Setting/Index.cshtml" Line="44" Column="42" />
-      <File FileName="Views/Setting/Forget.cshtml" Line="2" Column="5" />
+      <File FileName="Views/Customer/Create.cshtml" />
+      <File FileName="Views/Customer/Edit.cshtml" />
+      <File FileName="Controllers/POSController.cs" />
+      <File FileName="Views/POS/Index.cshtml" />
+      <File FileName="Views/POS/Innvoice.cshtml" />
+      <File FileName="Models/Sale.cs" />
+      <File FileName="Controllers/SalesController.cs" />
+      <File FileName="Views/Sales/Index.cshtml" />
+      <File FileName="Views/Sales/Edit.cshtml" />
+      <File FileName="wwwroot/assets/js/script.js" />
+      <File FileName="wwwroot/assets/js/moment.min.js" />
+      <File FileName="Controllers/SettingController.cs" />
+      <File FileName="Views/Setting/Index.cshtml" />
+      <File FileName="Views/Setting/Forget.cshtml" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Invoice_web_app">
+          <Node name="Invoice_web_app" expanded="True">
             <Node name="Smart-Invoice" expanded="True">
               <Node name="Dependencies" expanded="True">
                 <Node name="FrameworkReferences" expanded="True" />
@@ -88,16 +94,11 @@
                   <Node name="js" expanded="True" />
                 </Node>
               </Node>
+              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Smart-Invoice PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>

@@ -1,23 +1,37 @@
 ﻿<Properties StartupConfiguration="{200DB9AB-0814-406C-AD97-5FCB82B47F1A}|Invoice_web_app">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.Smart-Invoice PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Home/Index.cshtml">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/LoginController.cs">
     <Files>
-      <File FileName="Properties/launchSettings.json" Line="8" Column="6" />
-      <File FileName="Program.cs" Line="14" Column="2" />
-      <File FileName="Views/Home/Index.cshtml" Line="9" Column="1" />
+      <File FileName="Properties/launchSettings.json" />
+      <File FileName="Program.cs" Line="86" Column="1" />
+      <File FileName="Views/Home/Index.cshtml" />
+      <File FileName="Models/User.cs" />
+      <File FileName="appsettings.json" />
+      <File FileName="Controllers/CategoryController.cs" />
+      <File FileName="Controllers/CustomerController.cs" Line="1" Column="1" />
+      <File FileName="Controllers/StoreController.cs" Line="135" Column="18" />
+      <File FileName="Models/Store.cs" Line="22" Column="1" />
+      <File FileName="Views/Store/Index.cshtml" Line="22" Column="31" />
+      <File FileName="Controllers/LoginController.cs" Line="42" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Smart-Invoice">
-            <Node name="Smart-Invoice" expanded="True">
+            <Node name="Smart-Invoice">
+              <Node name="Controllers">
+                <Node name="LoginController.cs" selected="True" />
+              </Node>
+              <Node name="Models" expanded="True" />
               <Node name="Properties" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Home" expanded="True">
-                  <Node name="Privacy.cshtml" selected="True" />
-                </Node>
+                <Node name="Home" expanded="True" />
                 <Node name="Shared" expanded="True" />
+                <Node name="Store" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -25,9 +39,6 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>

@@ -39,7 +39,6 @@ namespace Invoice_web_app.Controllers
         {
             //return RedirectToAction("Index", "Product");
 
-
             string email = Request.Form["Email"];
             string password = Request.Form["Password"];
             
