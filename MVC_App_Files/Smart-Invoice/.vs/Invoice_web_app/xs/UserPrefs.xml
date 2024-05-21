@@ -1,68 +1,12 @@
 ﻿<Properties StartupConfiguration="{B9E3BC7F-2C3D-4C37-AFBD-9948CF3F59B9}|Invoice_web_app">
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Smart-Invoice PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
-    <Files>
-      <File FileName="Properties/launchSettings.json" />
-      <File FileName="Views/Home/Index.cshtml" />
-      <File FileName="Views/Home/Privacy.cshtml" />
-      <File FileName="Views/Shared/_Layout.cshtml" />
-      <File FileName="Views/Shared/_Layout.cshtml.css" />
-      <File FileName="Controllers/HomeController.cs" />
-      <File FileName="Controllers/ProductController.cs" />
-      <File FileName="Views/Login/Index.cshtml" />
-      <File FileName="Controllers/LoginController.cs" />
-      <File FileName="Views/Shared/_ValidationScriptsPartial.cshtml" />
-      <File FileName="appsettings.json" />
-      <File FileName="wwwroot/assets/js/bootstrap.bundle.min.js" />
-      <File FileName="Models/ErrorViewModel.cs" />
-      <File FileName="Program.cs" Line="53" Column="1" />
-      <File FileName="Views/_ViewImports.cshtml" />
-      <File FileName="Models/User.cs" />
-      <File FileName="Views/Product/Index.cshtml" />
-      <File FileName="Views/Shared/Error.cshtml" />
-      <File FileName="Views/Login/Forget.cshtml" />
-      <File FileName="Views/Login/SignUp.cshtml" />
-      <File FileName="Controllers/UserController.cs" />
-      <File FileName="Views/User/Index.cshtml" />
-      <File FileName="Views/User/AddUser.cshtml" />
-      <File FileName="Views/User/Edit.cshtml" />
-      <File FileName="Controllers/StoreController.cs" />
-      <File FileName="Views/Store/Index.cshtml" />
-      <File FileName="Models/Store.cs" />
-      <File FileName="Views/Store/Create.cshtml" />
-      <File FileName="Views/Store/Edit.cshtml" />
-      <File FileName="Controllers/CategoryController.cs" />
-      <File FileName="Models/Category.cs" />
-      <File FileName="Views/Category/Index.cshtml" />
-      <File FileName="Views/Category/Create.cshtml" />
-      <File FileName="Views/Category/Edit.cshtml" />
-      <File FileName="Models/Product.cs" />
-      <File FileName="Views/Product/Create.cshtml" />
-      <File FileName="Views/Product/Edit.cshtml" />
-      <File FileName="Controllers/CustomerController.cs" />
-      <File FileName="Models/Customer.cs" />
-      <File FileName="Views/Customer/Index.cshtml" />
-      <File FileName="Views/Customer/Create.cshtml" />
-      <File FileName="Views/Customer/Edit.cshtml" />
-      <File FileName="Controllers/POSController.cs" />
-      <File FileName="Views/POS/Index.cshtml" />
-      <File FileName="Views/POS/Innvoice.cshtml" />
-      <File FileName="Models/Sale.cs" />
-      <File FileName="Controllers/SalesController.cs" />
-      <File FileName="Views/Sales/Index.cshtml" />
-      <File FileName="Views/Sales/Edit.cshtml" />
-      <File FileName="wwwroot/assets/js/script.js" />
-      <File FileName="wwwroot/assets/js/moment.min.js" />
-      <File FileName="Controllers/SettingController.cs" />
-      <File FileName="Views/Setting/Index.cshtml" />
-      <File FileName="Views/Setting/Forget.cshtml" />
-    </Files>
+  <MonoDevelop.Ide.ItemProperties.Smart-Invoice PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
