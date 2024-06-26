@@ -1,15 +1,8 @@
 ﻿<Properties StartupConfiguration="{200DB9AB-0814-406C-AD97-5FCB82B47F1A}|Invoice_web_app">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.Smart-Invoice PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
     <Files>
       <File FileName="Properties/launchSettings.json" />
-      <File FileName="Program.cs" Line="48" Column="3" />
+      <File FileName="Program.cs" Line="21" Column="1" />
       <File FileName="Views/Home/Index.cshtml" />
       <File FileName="Models/User.cs" />
       <File FileName="appsettings.json" />
@@ -18,7 +11,16 @@
       <File FileName="Controllers/StoreController.cs" />
       <File FileName="Models/Store.cs" />
       <File FileName="Views/Store/Index.cshtml" />
-      <File FileName="Controllers/LoginController.cs" Line="42" Column="1" />
+      <File FileName="Controllers/LoginController.cs" Line="19" Column="29" />
+      <File FileName="Controllers/HomeController.cs" />
+      <File FileName="Controllers/ProductController.cs" />
+      <File FileName="Controllers/POSController.cs" />
+      <File FileName="Models/Sale.cs" />
+      <File FileName="Models/Product.cs" />
+      <File FileName="Models/ErrorViewModel.cs" />
+      <File FileName="Models/Customer.cs" />
+      <File FileName="Models/Category.cs" />
+      <File FileName="Controllers/UserController.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -27,11 +29,10 @@
             <Node name="Smart-Invoice">
               <Node name="Controllers" expanded="True" />
               <Node name="Models" expanded="True" />
-              <Node name="Properties" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Home" expanded="True" />
-                <Node name="Shared" expanded="True" />
                 <Node name="Store" expanded="True" />
+                <Node name="User" expanded="True" />
               </Node>
               <Node name="Program.cs" selected="True" />
             </Node>
@@ -40,4 +41,11 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Smart-Invoice PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
 </Properties>
