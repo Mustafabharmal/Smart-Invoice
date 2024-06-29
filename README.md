@@ -1,4 +1,4 @@
-# Smart-Invoice Management System
+# Smart-Invoice Management System 🛒
 
 Smart-Invoice Management System is an application that facilitates efficient role-based access control and comprehensive management of customer and product-related information. The system distinguishes between customers and owners, providing specific privileges for data modification. It features a robust Point of Sale (POS) system for seamless product management and includes a notable functionality for generating professional invoices in PDF format.
 
